@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ผลงาน และ Certificate ของพีรวิชญ์ กันทะกะ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+        :root {
+            --primary-color: #2c3e50; --secondary-color: #3498db; --background-color: #f4f4f9;
+            --card-background: #ffffff; --text-color: #333; --light-text-color: #ecf0f1;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Sarabun', sans-serif; margin: 0; background-color: var(--background-color);
+            color: var(--text-color); line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; overflow: auto; }
+        .hero { background-color: var(--primary-color); color: var(--light-text-color); padding: 4rem 0; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.2rem; color: var(--secondary-color); }
+        .hero nav { margin-top: 2rem; }
+        .hero nav a { color: var(--light-text-color); text-decoration: none; margin: 0 15px; font-size: 1rem; font-weight: bold; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: border-bottom 0.3s ease; }
+        .hero nav a:hover { border-bottom: 2px solid var(--secondary-color); }
+        .section { padding: 3rem 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--primary-color); }
+
+        /* === แก้ไข: ทำให้เป็น 2 คอลัมน์สำหรับจอใหญ่ และ 1 คอลัมน์สำหรับจอเล็ก === */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* ค่าเริ่มต้นสำหรับจอเล็ก (มือถือ): 1 คอลัมน์ */
+            gap: 1.5rem;
+        }
+        
+        /* สำหรับหน้าจอที่กว้างกว่า 768px (แท็บเล็ต/คอม) ให้เปลี่ยนเป็น 2 คอลัมน์ */
+        @media (min-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .project-card {
+            background: var(--card-background); border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column;
+        }
+        /* === จบส่วนแก้ไข === */
+
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .project-card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #eee; }
+        .project-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-info h3 { margin: 0 0 0.5rem 0; color: var(--primary-color); }
+        .project-info p { margin: 0; font-size: 0.9rem; color: #666; flex-grow: 1; }
+        .pdf-links { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+        .pdf-button {
+            display: block; text-decoration: none; padding: 0.6rem 1rem; background-color: var(--secondary-color);
+            color: white; border-radius: 5px; font-weight: bold; text-align: center; transition: background-color 0.2s ease;
+        }
+        .pdf-button:hover { background-color: #2980b9; }
+        .project-card > a { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
+        footer { text-align: center; padding: 2rem 0; background-color: var(--primary-color); color: var(--light-text-color); margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>พีรวิชญ์ กันทะกะ</h1>
+            <p>ผลงาน และ Certificate</p>
+            <nav>
+                <a href="#projects">โปรเจกต์</a>
+                <a href="#certificates">เกียรติบัตร</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">โปรเจกต์ (Projects)</h2>
+                <div class="portfolio-grid">
+
+                    <div class="project-card">
+                        <img src="images/Screenshot 2025-09-17 092143.png" alt="แอปแนะนำร้านอาหารใกล้มอ">
+                        <div class="project-info">
+                            <h3>แอปแนะนำร้านอาหารใกล้มอ</h3>
+                            <p>โปรเจกต์พัฒนาระบบแนะนำร้านอาหารด้วยภาษา Java เชื่อมต่อฐานข้อมูลเพื่อจัดการข้อมูลร้านอาหาร</p>
+                            <div class="pdf-links">
+                                <a href="files/โปรเจคJAVA.pdf" target="_blank" class="pdf-button">📄 ไฟล์ Projects</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/MoistureCare.png" alt="MoistureCare Project">
+                        <div class="project-info">
+                            <h3>MoistureCare</h3>
+                            <p>โปรเจกต์ IoT สำหรับวัดความชื้นในดินโดยใช้ ESP32 และส่งข้อมูลแจ้งเตือนผ่านแอปพลิเคชัน</p>
+                            <div class="pdf-links">
+                                <a href="files/การอธิบายของแต่ละส่วน.pdf" target="_blank" class="pdf-button">📄 คำอธิบายส่วนต่างๆ</a>
+                                <a href="files/โปรเจคESP32 (1) (1).pdf" target="_blank" class="pdf-button">📘 ไฟล์ Projects</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/Screenshot 2025-09-17 092153.png" alt="PSRU Bus Application">
+                        <div class="project-info">
+                            <h3>PSRU Bus Application (Prompt Go)</h3>
+                            <p>แอปพลิเคชันติดตามตำแหน่งรถรางของมหาวิทยาลัยราชภัฏพิบูลสงคราม (PSRU) แบบเรียลไทม์</p>
+                             <div class="pdf-links">
+                                <a href="files/ProgressReport_03_Result_04 (1).pdf" target="_blank" class="pdf-button">📄 รายงานความคืบหน้า</a>
+                                <a href="files/PSRU Bus application (1).pdf" target="_blank" class="pdf-button">📘 ไฟล์ Projects หลัก</a>
+                                <a href="files/Test Prompt Go PSRU  (1).pdf" target="_blank" class="pdf-button">📈 รายงานผลการทดสอบ</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="images/Screenshot 2025-09-17 100838.png" alt="Tester Skills Showcase">
+                        <div class="project-info">
+                            <h3>สรุปทักษะด้าน Software Testing</h3>
+                            <p>เอกสารสรุปความรู้และทักษะการทดสอบซอฟต์แวร์ ครอบคลุมหลายภาษาและเครื่องมือที่ใช้งาน</p>
+                             <div class="pdf-links">
+                                <a href="files/TesterAll.pdf" target="_blank" class="pdf-button">📄 สรุปทักษะทั้งหมด</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="section">
+            <div class="container">
+                <h2 class="section-title">กิจกรรม (Activities)</h2>
+                <div class="portfolio-grid">
+
+                    <div class="project-card">
+                        <img src="images/กิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน” ให้แก่กลุ่มตัวอย่างผู้ใช้งานแอปพลิเคชันท่องเที่ยวชุมชน.jpg" alt="ภาพกิจกรรมที่ 1">
+                        <div class="project-info">
+                            <h3>กิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน”</h3>
+                            <p>เมื่อวันที่ 31 กรกฎาคม 2568 คณาจารย์ บุคลากร และนักศึกษาสาขาวิชาวิศวกรรมคอมพิวเตอร์ คณะเทคโนโลยีอุตสาหกรรม มหาวิทยาลัยราชภัฏพิบูลสงคราม ได้ลงพื้นที่จัดกิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน” ให้แก่กลุ่มตัวอย่างผู้ใช้งานแอปพลิเคชันท่องเที่ยวชุมชน เทศบาลตำบลทุ่งหลวง  อ.คีรีมาส จ.สุโขทัย การอบรมจัดขึ้นในบรรยากาศที่เป็นกันเอง ผสานการเรียนรู้แบบปฏิบัติจริง พร้อมแลกเปลี่ยนความคิดเห็นและข้อเสนอแนะจากผู้ทดลองใช้งานแอปพลิเคชันท่องเที่ยวชุม</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/ศึกษาดูงาน ภายใต้โครงการ “การศึกษาดูงานสำหรับนักศึกษาสาขาวิชาวิศวกรรมคอมพิวเตอร์” ประจำปี พ.ศ.2568.jpg" alt="ภาพกิจกรรมที่ 2">
+                        <div class="project-info">
+                            <h3>กิจกรรม "การศึกษาดูงานสำหรับนักศึกษาสาขาวิชาวิศวกรรมคอมพิวเตอร์” ประจำปี พ.ศ.2568</h3>
+                            <p>เมื่อวันที่ 19 – 20 มีนาคม 2568 “AUTOMATION EXPO 2025” ศูนย์ประชุมและแสดงสินค้านานาชาตินงนุชพัทยา จังหวัดชลบุรี และ ที่ “EEC Automation Park” คณะวิศวกรรมศาสตร์ มหาวิทยาลัยบูรพา จังหวัดชลบุรี</p>
+                        </div>
+                    </div>
+                    
+                    </div>
+            </div>
+        </section>
+        
+        <section id="certificates" class="section">
+            <div class="container">
+                <h2 class="section-title">เกียรติบัตร (Certificates)</h2>
+                <div class="portfolio-grid">
+                    
+                    <div class="project-card"><a href="files/certificate (1).jpg" target="_blank"><img src="files/certificate (1).jpg" alt="Certificate 1"><div class="project-info"><h3>เกียรติบัตรเข้าร่วมอบรม</h3><p></p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate-Cyber.pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092224.png" alt="Certificate Cyber Security"><div class="project-info"><h3>Cybersecurity Essentials</h3><p></p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate_(Digital_Community)(Digital_Literacy).pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092232.png" alt="Certificate Digital Literacy"><div class="project-info"><h3>Digital Literacy & Digital Community</h3><p></p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate_Hackathon%232.pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092243.png" alt="Certificate Hackathon"><div class="project-info"><h3>การแข่งขัน Hackathon #2</h3><p></p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate-IOT.pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092251.png" alt="Certificate IoT"><div class="project-info"><h3>Introduction to IoT</h3><p></p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/certificate.pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092300.png" alt="Certificate"><div class="project-info"><h3>เกียรติบัตรการพัฒนาทักษะ</h3><p></p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate(2).pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092308.png" alt="Certificate"><div class="project-info"><h3>ประกาศนียบัตร</h3><p>ได้รับจาก: Cisco Networking Academy</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate(1).pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092330.png" alt="Certificate"><div class="project-info"><h3>ประกาศนียบัตร</h3><p></p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate(3).pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092339.png" alt="Certificate"><div class="project-info"><h3>ประกาศนียบัตร</h3><p>ได้รับจาก: MOOC</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate-Software.pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092347.png" alt="Certificate Software Testing"><div class="project-info"><h3>ทักษะการทดสอบซอฟต์แวร์</h3><p></p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Fortinet Certification.pdf" target="_blank"><img src="images/Screenshot 2025-09-17 092355.png" alt="Fortinet Certification"><div class="project-info"><h3>Fortinet Network Security Expert</h3><p>ได้รับจาก: Fortinet</p></div></a></div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 พีรวิชญ์ กันทะกะ | ติดต่อ: wkanthaka@gmail.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
