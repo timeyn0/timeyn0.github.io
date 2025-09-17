@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peeravit Kanthaka | Portfolio & Certificates</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap');
+        :root {
+            --primary-color: #2c3e50; --secondary-color: #3498db; --background-color: #f4f4f9;
+            --card-background: #ffffff; --text-color: #333; --light-text-color: #ecf0f1;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Sarabun', sans-serif; margin: 0; background-color: var(--background-color);
+            color: var(--text-color); line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: auto; padding: 0 20px; overflow: auto; }
+        .hero { background-color: var(--primary-color); color: var(--light-text-color); padding: 4rem 0; text-align: center; }
+        .hero h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+        .hero p { font-size: 1.2rem; color: var(--secondary-color); }
+        .hero nav { margin-top: 2rem; }
+        .hero nav a { color: var(--light-text-color); text-decoration: none; margin: 0 15px; font-size: 1rem; font-weight: bold; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: border-bottom 0.3s ease; }
+        .hero nav a:hover { border-bottom: 2px solid var(--secondary-color); }
+        .section { padding: 3rem 0; }
+        .section-title { text-align: center; font-size: 2rem; margin-bottom: 2rem; color: var(--primary-color); }
+
+        /* === แก้ไข: ทำให้เป็น 2 คอลัมน์สำหรับจอใหญ่ และ 1 คอลัมน์สำหรับจอเล็ก === */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* ค่าเริ่มต้นสำหรับจอเล็ก (มือถือ): 1 คอลัมน์ */
+            gap: 1.5rem;
+        }
+        
+        /* สำหรับหน้าจอที่กว้างกว่า 768px (แท็บเล็ต/คอม) ให้เปลี่ยนเป็น 2 คอลัมน์ */
+        @media (min-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .project-card {
+            background: var(--card-background); border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column;
+        }
+        /* === จบส่วนแก้ไข === */
+
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
+        .project-card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid #eee; }
+        .project-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-info h3 { margin: 0 0 0.5rem 0; color: var(--primary-color); }
+        .project-info p { margin: 0; font-size: 0.9rem; color: #666; flex-grow: 1; }
+        .pdf-links { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+        .pdf-button {
+            display: block; text-decoration: none; padding: 0.6rem 1rem; background-color: var(--secondary-color);
+            color: white; border-radius: 5px; font-weight: bold; text-align: center; transition: background-color 0.2s ease;
+        }
+        .pdf-button:hover { background-color: #2980b9; }
+        .project-card > a { text-decoration: none; color: inherit; display: flex; flex-direction: column; height: 100%; }
+        footer { text-align: center; padding: 2rem 0; background-color: var(--primary-color); color: var(--light-text-color); margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <div class="container">
+            <h1>Peeravit Kanthaka</h1>
+            <p>Projects & Certificates</p>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#activities">Activities</a>
+                <a href="#certificates">Certificates</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="portfolio-grid">
+
+                    <div class="project-card">
+                        <img src="images/RestaurantNearPhibul.png" alt="แอปแนะนำร้านอาหารใกล้มอ">
+                        <div class="project-info">
+                            <h3>Restaurant Recommendation App</h3>
+                            <p>A project developing a restaurant recommendation system using Java with a database connection for managing restaurant data.</p>
+                            <div class="pdf-links">
+                                <a href="files/ProjectJAVA.pdf" target="_blank" class="pdf-button">📄 View Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/MoistureCare.png" alt="MoistureCare Project">
+                        <div class="project-info">
+                            <h3>MoistureCare</h3>
+                            <p>An IoT project for measuring soil moisture using an ESP32, which sends alert notifications via an application.</p>
+                            <div class="pdf-links">
+                                <a href="files/Work.pdf" target="_blank" class="pdf-button">📄 Component Details</a>
+                                <a href="files/ProjectESP32.pdf" target="_blank" class="pdf-button">📘 View Project</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/PromptGo.png" alt="PSRU Bus Application">
+                        <div class="project-info">
+                            <h3>PSRU Bus Application (Prompt Go)</h3>
+                            <p>A real-time tracking application for the tram system at Pibulsongkram Rajabhat University (PSRU).</p>
+                             <div class="pdf-links">
+                                <a href="files/ProgressReport_Resultdf.pdf" target="_blank" class="pdf-button">📄 Progress Report</a>
+                                <a href="https://drive.google.com/file/d/1BaiakDZrFHjJaib1j0Pj8CQ6cSj0yo3B/view?usp=sharing" target="_blank" class="pdf-button">📘 Main Project File</a>
+                                <a href="files/TestPromptGo.pdf" target="_blank" class="pdf-button">📈 Test Report</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <img src="images/TestAll.png" alt="Tester Skills Showcase">
+                        <div class="project-info">
+                            <h3>Software Testing Skills Summary</h3>
+                            <p>A document summarizing knowledge and skills in software testing, covering various languages and tools.</p>
+                             <div class="pdf-links">
+                                <a href="files/TesterAll.pdf" target="_blank" class="pdf-button">📄 View Full Summary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="activities" class="section">
+            <div class="container">
+                <h2 class="section-title">Activities</h2>
+                <div class="portfolio-grid">
+
+                    <div class="project-card">
+                        <img src="images/T.jpg" alt="">
+                        <div class="project-info">
+                            <h3>ThiaoChumChon App</h3>
+                            <p>On July 31, 2025, participated in a workshop to transfer knowledge on using a community tourism application to local users in Sukhothai, fostering hands-on learning and gathering feedback.</p>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <img src="images/T2.jpg" alt="">
+                        <div class="project-info">
+                            <h3>AUTOMATION EXPO 2025</h3>
+                            <p>On March 19-20, 2025, visited the "AUTOMATION EXPO 2025" and the "EEC Automation Park" at Burapha University to study modern industrial automation and robotics.</p>
+                        </div>
+                    </div>
+                    
+                    </div>
+            </div>
+        </section>
+        
+        <section id="certificates" class="section">
+            <div class="container">
+                <h2 class="section-title">Certificates</h2>
+                <div class="portfolio-grid">
+                    
+                    <div class="project-card"><a href="files/certificate1.jpg" target="_blank"><img src="files/certificate1.jpg" alt="Certificate 1"><div class="project-info"><h3>Certificate of Participation</h3><p>Issued by: AIS</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate2.pdf" target="_blank"><img src="images/CyberSec.png" alt="Certificate Cyber Security"><div class="project-info"><h3>Cybersecurity Essentials</h3><p>Issued by: PSRU</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate3.pdf" target="_blank"><img src="images/PSRUDigital.png" alt="Certificate Digital Literacy"><div class="project-info"><h3>Digital Literacy & Digital Community</h3><p>Issued by: PSRU</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate4.pdf" target="_blank"><img src="images/PSRUCYBER.png" alt="Certificate Hackathon"><div class="project-info"><h3>Hackathon #2 Competition</h3><p>Issued by: PSRU</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate5.pdf" target="_blank"><img src="images/IOT.png" alt="Certificate IoT"><div class="project-info"><h3>Introduction to IoT</h3><p>Issued by: PSRU</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/certificate6.pdf" target="_blank"><img src="images/DOCKER.png" alt="Certificate"><div class="project-info"><h3>Docker Skills Development</h3><p>Issued by: PSRU</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate7.pdf" target="_blank"><img src="images/Python.png" alt="Certificate"><div class="project-info"><h3>PCAP: Programming Essentials in Python</h3><p>Issued by: Cisco Networking Academy</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate8.pdf" target="_blank"><img src="images/PSRUDigitalTest.png" alt="Certificate"><div class="project-info"><h3>Digital Literacy Assessment</h3><p>Issued by: PSRU</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate9.pdf" target="_blank"><img src="images/BasicCyber.png" alt="Certificate"><div class="project-info"><h3>Fundamentals of Cybersecurity</h3><p>Issued by: MOOC</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate10.pdf" target="_blank"><img src="images/Software.png" alt="Certificate Software Testing"><div class="project-info"><h3>Software Testing Skills</h3><p>Issued by: PSRU</p></div></a></div>
+                    
+                    <div class="project-card"><a href="files/Certificate11.pdf" target="_blank"><img src="images/Fortinet.png" alt="Fortinet Certification"><div class="project-info"><h3>Fortinet Network Security Expert</h3><p>Issued by: Fortinet</p></div></a></div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Peeravit Kanthaka | Contact: wkanthaka@gmail.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>
