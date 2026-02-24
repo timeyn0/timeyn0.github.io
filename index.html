@@ -189,6 +189,23 @@
         .modal-content h3 { margin-top: 1.5rem; color: var(--secondary-color); font-size: 1.1rem; }
         .modal-content ul { list-style: disc; padding-left: 20px; color: #475569; margin-bottom: 0;}
         .modal-content p { color: #475569; }
+
+        /* Skill Tags */
+        .skill-tag {
+            background: #e2e8f0; 
+            color: #334155; 
+            padding: 8px 16px; 
+            border-radius: 20px; 
+            font-weight: 600; 
+            font-size: 0.95rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -198,6 +215,7 @@
             <h1>พีรวิชญ์ กันทะกะ</h1>
             <p>ผลงาน และ เกียรติบัตร</p>
             <nav>
+                <a href="#skills">ทักษะ</a>
                 <a href="#projects">โปรเจกต์</a>
                 <a href="#activities">กิจกรรม</a>
                 <a href="#certificates">เกียรติบัตร</a>
@@ -206,6 +224,21 @@
     </header>
 
     <main>
+        <section id="skills" class="section" style="background-color: #ffffff; padding-bottom: 2rem;">
+            <div class="container">
+                <h2 class="section-title">ทักษะและเครื่องมือ</h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 800px; margin: auto;">
+                    <span class="skill-tag">Software Testing (Manual & Auto)</span>
+                    <span class="skill-tag">Test Case Design</span>
+                    <span class="skill-tag">Appium</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Excel (Test Management)</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Visual Studio Code</span>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="section">
             <div class="container">
                 <h2 class="section-title">โปรเจกต์</h2>
@@ -232,6 +265,19 @@
                             <p>โปรเจกต์ทดสอบแอปพลิเคชันติดตามตำแหน่งรถรางของมหาวิทยาลัยฯ แบบอัตโนมัติ</p>
                             <div class="button-group">
                                 <button onclick="openModal('modal-project2')" class="details-button">ดูรายละเอียด</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="card-img-wrapper">
+                            <img src="images/SurveyProject.png" alt="Survey System Project">
+                        </div>
+                        <div class="project-info">
+                            <h3>ทดสอบระบบแบบสอบถาม (Survey System)</h3>
+                            <p>ออกแบบ Flowchart และเขียน Test Case สำหรับระบบประเมินผล จัดการเวอร์ชัน และสร้างแบบสอบถาม</p>
+                            <div class="button-group">
+                                <button onclick="openModal('modal-project3')" class="details-button">ดูรายละเอียด</button>
                             </div>
                         </div>
                     </div>
@@ -441,6 +487,20 @@
             <p>ออกแบบและพัฒนาสคริปต์สำหรับทดสอบแอปพลิเคชัน PSRU Bus แบบอัตโนมัติ เพื่อตรวจสอบความถูกต้องของการแสดงตำแหน่งรถไฟฟ้าแบบเรียลไทม์ และทดสอบประสิทธิภาพของระบบ</p>
             <h3>เครื่องมือที่ใช้ (Tools Used):</h3>
             <ul><li>Appium</li><li>Visual Studio Code (สำหรับเขียนสคริปต์ทดสอบ)</li><li>Google Sheets (สำหรับ Test Cases)</li><li>Python</li><li>Android Studio (สำหรับจำลองแอปพลิเคชั่น)</li></ul>
+        </div>
+    </div>
+
+    <div id="modal-project3" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(this)">&times;</button>
+            <h2>ทดสอบระบบแบบสอบถาม (Survey System)</h2>
+            <p>โปรเจกต์สหกิจศึกษาที่เน้นการประกันคุณภาพซอฟต์แวร์สำหรับระบบประเมินผลและแบบสอบถาม ทำงานร่วมกับทีมพัฒนาเพื่อปรับปรุงระบบให้พร้อมใช้งานจริง</p>
+            <h3>รายละเอียดการทำงาน:</h3>
+            <ul>
+                <li>วิเคราะห์และออกแบบ Flowchart การทำงานของระบบเพื่อหา Edge Cases</li>
+                <li>เขียน Test Case ครอบคลุมฟีเจอร์หลัก เช่น การสร้างแบบสอบถาม, การจัดการเวอร์ชัน (Version Control) และรูปแบบคำถามประเภทต่างๆ</li>
+                <li>ใช้งาน Excel (Web Version) ในการจัดการ เขียนสูตร และติดตามสถานะของ Test Case</li>
+            </ul>
         </div>
     </div>
     
