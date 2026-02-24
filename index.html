@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>พีรวิชญ์ กันทะกะ | ผลงาน และ เกียรติบัตร</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@400;600;700&display=swap');
         
         :root {
             --primary-color: #1e293b; 
             --secondary-color: #3b82f6; 
+            --secondary-dark: #2563eb;
             --background-color: #f8fafc;
             --card-background: #ffffff; 
             --text-color: #334155; 
@@ -17,7 +22,7 @@
             --border-radius: 12px;
         }
         
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
         
         body {
             font-family: 'Sarabun', sans-serif; 
@@ -29,192 +34,176 @@
         
         .container { max-width: 1100px; margin: auto; padding: 0 20px; }
         
+        /* Header Animation */
         .hero { 
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: var(--light-text-color); 
-            padding: 5rem 0; 
+            padding: 6rem 0 5rem; 
             text-align: center; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-        .hero h1 { font-size: 3rem; margin: 0 0 0.5rem 0; font-weight: 700; letter-spacing: 1px;}
-        .hero p { font-size: 1.2rem; color: #93c5fd; margin: 0; }
-        
-        .hero nav { margin-top: 2.5rem; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-        .hero nav a { 
-            color: var(--light-text-color); 
-            text-decoration: none; 
-            font-size: 1.1rem; 
-            font-weight: 600; 
-            padding: 8px 16px; 
-            border-radius: 8px;
-            transition: all 0.3s ease; 
-            background: rgba(255,255,255,0.1);
-        }
-        .hero nav a:hover { 
-            background: var(--secondary-color);
-            transform: translateY(-2px);
-        }
-
-        .section { padding: 4rem 0; }
-        .section-title { 
-            text-align: center; 
-            font-size: 2.2rem; 
-            margin-bottom: 2.5rem; 
-            color: var(--primary-color);
+            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
             position: relative;
+            overflow: hidden;
+        }
+        /* เพิ่มลูกเล่นพื้นหลังเคลื่อนไหวจางๆ */
+        .hero::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 60%);
+            animation: rotateBackground 30s linear infinite; z-index: 0;
+        }
+        @keyframes rotateBackground { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
+        .hero .container { position: relative; z-index: 1; }
+        .hero h1 { font-size: 3.5rem; margin: 0 0 0.5rem 0; font-weight: 700; letter-spacing: 1px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);}
+        .hero p { font-size: 1.3rem; color: #bae6fd; margin: 0; font-weight: 300;}
+        
+        .hero nav { margin-top: 3rem; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .hero nav a { 
+            color: var(--light-text-color); text-decoration: none; font-size: 1.05rem; font-weight: 600; 
+            padding: 10px 20px; border-radius: 30px; transition: all 0.3s ease; 
+            background: rgba(255,255,255,0.08); backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.1);
+        }
+        .hero nav a:hover { background: var(--secondary-color); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4); border-color: transparent;}
+
+        .section { padding: 5rem 0; }
+        .section-title { 
+            text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary-color); position: relative; font-weight: 700;
         }
         .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--secondary-color);
-            margin: 10px auto 0;
-            border-radius: 2px;
+            content: ''; display: block; width: 80px; height: 4px; background: var(--secondary-color); margin: 15px auto 0; border-radius: 2px;
         }
 
-        .portfolio-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .portfolio-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
         @media (min-width: 768px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 1024px) { #certificates .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
         
         .project-card { 
-            background: var(--card-background); 
-            border-radius: var(--border-radius); 
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
-            overflow: hidden; 
-            transition: all 0.3s ease; 
-            display: flex; 
-            flex-direction: column; 
-            border: 1px solid #e2e8f0;
+            background: var(--card-background); border-radius: var(--border-radius); 
+            box-shadow: 0 5px 15px -3px rgba(0,0,0,0.05); overflow: hidden; 
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* เด้งดึ๋งนิดๆ */
+            display: flex; flex-direction: column; border: 1px solid #f1f5f9;
         }
         .project-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.15); 
+            transform: translateY(-10px) scale(1.02); /* ยกขึ้นและขยาย */
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15); border-color: #e2e8f0;
         }
         
         .card-img-wrapper {
-            width: 100%;
-            height: 220px;
-            overflow: hidden;
-            background-color: #f1f5f9;
+            width: 100%; height: 220px; overflow: hidden; background-color: #f1f5f9; position: relative;
         }
+        /* เพิ่ม Overlay สีดำจางๆ ตอนเอาเมาส์ชี้รูป */
+        .card-img-wrapper::after {
+            content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0); transition: all 0.4s ease;
+        }
+        .project-card:hover .card-img-wrapper::after { background: rgba(0,0,0,0.1); }
+
         .card-img-wrapper img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            object-position: center top;
-            transition: transform 0.5s ease; 
+            width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s ease; 
         }
-        .project-card:hover .card-img-wrapper img {
-            transform: scale(1.08);
-        }
+        .project-card:hover .card-img-wrapper img { transform: scale(1.1); }
         
-        .project-info { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .project-info h3 { margin: 0 0 0.8rem 0; color: var(--primary-color); font-size: 1.25rem; }
-        .project-info p { margin: 0; font-size: 0.95rem; color: #64748b; flex-grow: 1; }
+        .project-info { padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-info h3 { margin: 0 0 0.8rem 0; color: var(--primary-color); font-size: 1.35rem; font-weight: 700;}
+        .project-info p { margin: 0; font-size: 1rem; color: #64748b; flex-grow: 1; line-height: 1.7;}
         
-        .button-group { margin-top: 1.5rem; display: flex; flex-direction: row; gap: 0.8rem; flex-wrap: wrap; }
+        /* --- BUTTON ANIMATIONS --- */
+        .button-group { margin-top: 1.8rem; display: flex; flex-direction: row; gap: 1rem; flex-wrap: wrap; }
         
         .details-button {
-            display: inline-block; 
-            text-decoration: none; 
-            padding: 0.6rem 1.2rem; 
-            background-color: transparent;
-            color: var(--secondary-color); 
-            border: 2px solid var(--secondary-color); 
-            border-radius: 6px;
-            font-size: 0.9rem;
-            font-weight: 600; 
-            text-align: center; 
-            transition: all 0.3s ease; 
-            cursor: pointer;
-            font-family: 'Sarabun', sans-serif;
-            flex: 1;
-            box-sizing: border-box;
+            display: inline-block; text-decoration: none; padding: 0.7rem 1.4rem; 
+            background-color: transparent; color: var(--secondary-color); 
+            border: 2px solid var(--secondary-color); border-radius: 8px;
+            font-size: 0.95rem; font-weight: 600; text-align: center; 
+            cursor: pointer; font-family: 'Sarabun', sans-serif; flex: 1; box-sizing: border-box;
+            /* Key for smooth hover */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+            position: relative; overflow: hidden; z-index: 1;
         }
-        .details-button:hover { background-color: var(--secondary-color); color: white; }
-        .details-button.primary { background-color: var(--secondary-color); color: white; border-color: var(--secondary-color); }
-        .details-button.primary:hover { background-color: #2563eb; border-color: #2563eb; }
+        
+        /* Hover Effect: ยกขึ้น, เปลี่ยนสี, มีเงาฟุ้งๆ */
+        .details-button:hover {
+            background-color: var(--secondary-color); color: white;
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 7px 14px rgba(59, 130, 246, 0.35);
+            border-color: transparent;
+        }
+        
+        /* Active Effect (ตอนกดค้าง): ยุบลงไปนิดนึง */
+        .details-button:active {
+            transform: translateY(-1px) scale(0.98);
+            box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3);
+        }
+
+        /* ปุ่ม Primary (เช่น ปุ่มดูภาพเต็ม) */
+        .details-button.primary { background-color: var(--secondary-color); color: white; }
+        .details-button.primary:hover { 
+            background-color: var(--secondary-dark); 
+            box-shadow: 0 7px 14px rgba(37, 99, 235, 0.4);
+        }
+        .details-button.primary:active { background-color: var(--secondary-dark); }
+
 
         footer { 
-            text-align: center; 
-            padding: 2rem 0; 
-            background-color: var(--primary-color); 
-            color: #94a3b8; 
-            margin-top: 4rem; 
+            text-align: center; padding: 3rem 0; background: #0f172a; color: #94a3b8; margin-top: 4rem; font-weight: 300;
         }
 
-        /* Modal Settings */
+        /* Modal Animations */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 23, 42, 0.7); 
-            backdrop-filter: blur(4px); 
+            background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); /* เบลอเยอะขึ้น */
             display: flex; align-items: center; justify-content: center; 
-            opacity: 0; visibility: hidden;
-            transition: all 0.3s ease; 
-            z-index: 1000;
+            opacity: 0; visibility: hidden; transition: all 0.4s ease; z-index: 1050;
         }
         .modal.show { opacity: 1; visibility: visible; }
         
         .modal-content {
-            background: white; 
-            padding: 2.5rem; 
-            border-radius: 12px; 
-            max-width: 600px;
-            width: 90%; 
-            position: relative; 
-            text-align: left;
-            transform: translateY(-20px) scale(0.95);
-            transition: all 0.3s ease;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            max-height: 90vh;
-            overflow-y: auto;
+            background: white; padding: 2.5rem; border-radius: 16px; width: 90%; max-width: 650px;
+            position: relative; text-align: left; 
+            /* เริ่มต้น: อยู่ต่ำลงมาและเล็กกว่าปกติ */
+            transform: translateY(30px) scale(0.9); opacity: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* เด้งนุ่มๆ */
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            max-height: 85vh; overflow-y: auto;
         }
-        .modal.show .modal-content { transform: translateY(0) scale(1); }
+        /* ตอนแสดง: เด้งขึ้นมาและขยายเต็มที่ */
+        .modal.show .modal-content { transform: translateY(0) scale(1); opacity: 1; }
         
         .modal-close { 
-            position: absolute; 
-            top: 15px; 
-            right: 20px; 
-            font-size: 2rem; 
-            color: #94a3b8; 
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: color 0.3s;
-            line-height: 1;
+            position: absolute; top: 15px; right: 20px; font-size: 2rem; color: #94a3b8; 
+            background: none; border: none; cursor: pointer; transition: all 0.3s; line-height: 1;
+            width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
         }
-        .modal-close:hover { color: #ef4444; }
-        .modal-content h2 { margin-top: 0; color: var(--primary-color); font-size: 1.5rem;}
-        .modal-content h3 { margin-top: 1.5rem; color: var(--secondary-color); font-size: 1.1rem; }
-        .modal-content ul { list-style: disc; padding-left: 20px; color: #475569; margin-bottom: 0;}
-        .modal-content p { color: #475569; }
+        .modal-close:hover { color: #ef4444; background: rgba(239, 68, 68, 0.1); transform: rotate(90deg); }
+        
+        .modal-content h2 { margin-top: 0; color: var(--primary-color); font-size: 1.6rem; font-weight: 700;}
+        .modal-content h3 { margin-top: 1.8rem; color: var(--secondary-color); font-size: 1.2rem; font-weight: 600;}
+        .modal-content ul { list-style: none; padding-left: 0; color: #475569; margin-bottom: 0;}
+        .modal-content ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
+        .modal-content ul li::before { 
+            content: '•'; color: var(--secondary-color); font-size: 1.5rem; position: absolute; left: 0; top: -5px; 
+        }
+        .modal-content p { color: #475569; line-height: 1.7; }
 
-        /* Skill Tags */
+        /* Skill Tags with Icons */
         .skill-tag {
-            background: #e2e8f0; 
-            color: #334155; 
-            padding: 8px 16px; 
-            border-radius: 20px; 
-            font-weight: 600; 
-            font-size: 0.95rem;
-            display: inline-block;
-            transition: all 0.3s ease;
+            background: #ffffff; color: #334155; padding: 10px 20px; border-radius: 30px; 
+            font-weight: 600; font-size: 1rem; display: inline-flex; align-items: center; gap: 10px;
+            transition: all 0.3s ease; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .skill-tag:hover {
-            background: var(--secondary-color);
-            color: white;
-            transform: translateY(-2px);
+            background: var(--secondary-color); color: white; border-color: transparent;
+            transform: translateY(-5px); box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
         }
+        .skill-tag i { transition: color 0.3s ease; }
+        .skill-tag:hover i { color: white !important; } /* บังคับให้ไอคอนเป็นสีขาวตอน Hover */
     </style>
 </head>
 <body>
 
     <header class="hero">
-        <div class="container">
+        <div class="container" data-aos="zoom-in" data-aos-duration="1000">
             <h1>พีรวิชญ์ กันทะกะ</h1>
             <p>ผลงาน และ เกียรติบัตร</p>
-            <nav>
+            <nav data-aos="fade-up" data-aos-delay="200">
                 <a href="#skills">ทักษะ</a>
                 <a href="#projects">โปรเจกต์</a>
                 <a href="#activities">กิจกรรม</a>
@@ -224,25 +213,37 @@
     </header>
 
     <main>
-        <section id="skills" class="section" style="background-color: #ffffff; padding-bottom: 2rem;">
+        <section id="skills" class="section" style="background-color: #f1f5f9; padding-bottom: 4rem;">
             <div class="container">
-                <h2 class="section-title">ทักษะและเครื่องมือ</h2>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 800px; margin: auto;">
-                    <span class="skill-tag">Software Testing (Manual & Auto)</span>
-                    <span class="skill-tag">Test Case Design</span>
-                    <span class="skill-tag">Appium</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Excel (Test Management)</span>
-                    <span class="skill-tag">Visual Studio Code</span>
+                <h2 class="section-title" data-aos="fade-up">ทักษะและเครื่องมือ</h2>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 900px; margin: auto;">
+                    <span class="skill-tag" data-aos="zoom-in" data-aos-delay="0">
+                        <i class="fa-solid fa-bug" style="color: #ef4444; font-size: 1.3rem;"></i> Software Testing
+                    </span>
+                    <span class="skill-tag" data-aos="zoom-in" data-aos-delay="50">
+                        <i class="fa-solid fa-file-contract" style="color: #f59e0b; font-size: 1.3rem;"></i> Test Case Design
+                    </span>
+                    <span class="skill-tag" data-aos="zoom-in" data-aos-delay="100">
+                        <i class="fa-solid fa-mobile-screen-button" style="color: #334155; font-size: 1.3rem;"></i> Appium
+                    </span>
+                    <span class="skill-tag" data-aos="zoom-in" data-aos-delay="150">
+                        <i class="fa-brands fa-python" style="color: #3776ab; font-size: 1.3rem;"></i> Python
+                    </span>
+                    <span class="skill-tag" data-aos="zoom-in" data-aos-delay="200">
+                        <i class="fa-solid fa-file-excel" style="color: #107c41; font-size: 1.3rem;"></i> Excel (Test Mgt.)
+                    </span>
+                    <span class="skill-tag" data-aos="zoom-in" data-aos-delay="300">
+                        <i class="fa-solid fa-code" style="color: #007acc; font-size: 1.3rem;"></i> VS Code
+                    </span>
                 </div>
             </div>
         </section>
 
         <section id="projects" class="section">
             <div class="container">
-                <h2 class="section-title">โปรเจกต์</h2>
+                <h2 class="section-title" data-aos="fade-up">โปรเจกต์</h2>
                 <div class="portfolio-grid">
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-img-wrapper">
                             <img src="images/T6.png" alt="Manual ThiaoChumChon App">
                         </div>
@@ -254,8 +255,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-img-wrapper">
                             <img src="images/PromptGo.png" alt="PSRU Bus Application">
                         </div>
@@ -267,8 +267,7 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                         <div class="card-img-wrapper">
                             <img src="images/SurveyProject.png" alt="Survey System Project">
                         </div>
@@ -284,11 +283,11 @@
             </div>
         </section>
 
-        <section id="activities" class="section">
+        <section id="activities" class="section" style="background-color: #f1f5f9;">
             <div class="container">
-                <h2 class="section-title">กิจกรรม</h2>
+                <h2 class="section-title" data-aos="fade-up">กิจกรรม</h2>
                 <div class="portfolio-grid">
-                     <div class="project-card">
+                     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                          <div class="card-img-wrapper">
                              <img src="images/T.jpg" alt="กิจกรรมอบรมแอปพลิเคชันเที่ยวชุมชน">
                          </div>
@@ -300,7 +299,7 @@
                             </div>
                          </div>
                      </div>
-                     <div class="project-card">
+                     <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                          <div class="card-img-wrapper">
                              <img src="images/T2.jpg" alt="ทัศนศึกษา AUTOMATION EXPO 2025">
                          </div>
@@ -318,10 +317,10 @@
         
         <section id="certificates" class="section">
             <div class="container">
-                <h2 class="section-title">เกียรติบัตร</h2>
+                <h2 class="section-title" data-aos="fade-up">เกียรติบัตร</h2>
                 <div class="portfolio-grid">
                     
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-img-wrapper">
                             <img src="files/certificate1.jpg" alt="Certificate 1">
                         </div>
@@ -334,7 +333,7 @@
                         </div>
                     </div>
                     
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
                         <div class="card-img-wrapper">
                             <img src="images/CyberSec.png" alt="Certificate Cyber Security">
                         </div>
@@ -347,7 +346,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-img-wrapper">
                             <img src="images/PSRUDigital.png" alt="Certificate Digital Literacy">
                         </div>
@@ -360,7 +359,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-img-wrapper">
                             <img src="images/PSRUCYBER.png" alt="Certificate Hackathon">
                         </div>
@@ -373,7 +372,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
                         <div class="card-img-wrapper">
                             <img src="images/IOT.png" alt="Certificate IoT">
                         </div>
@@ -386,7 +385,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-img-wrapper">
                             <img src="images/DOCKER.png" alt="Certificate">
                         </div>
@@ -399,7 +398,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-img-wrapper">
                             <img src="images/Python.png" alt="Certificate">
                         </div>
@@ -412,7 +411,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
                         <div class="card-img-wrapper">
                             <img src="images/PSRUDigitalTest.png" alt="Certificate">
                         </div>
@@ -425,7 +424,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                         <div class="card-img-wrapper">
                             <img src="images/BasicCyber.png" alt="Certificate">
                         </div>
@@ -438,7 +437,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-img-wrapper">
                             <img src="images/Software.png" alt="Certificate Software Testing">
                         </div>
@@ -451,7 +450,7 @@
                         </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
                         <div class="card-img-wrapper">
                             <img src="images/Fortinet.png" alt="Fortinet Certification">
                         </div>
@@ -614,12 +613,22 @@
     </div>
 
     <footer>
-        <div class="container">
+        <div class="container" data-aos="fade-in">
             <p>&copy; 2568 พีรวิชญ์ กันทะกะ | ติดต่อ: wkanthaka@gmail.com</p>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // ตั้งค่า AOS Animation
+        AOS.init({
+            duration: 800,    // ความเร็วของอนิเมชัน (ms)
+            easing: 'ease-in-out-cubic', // รูปแบบการเคลื่อนไหว
+            once: true,       // เล่นครั้งเดียวตอนเลื่อนผ่าน
+            mirror: false     // ไม่ต้องเล่นซ้ำตอนเลื่อนกลับขึ้นไป
+        });
+
+        // JavaScript สำหรับควบคุม Modal
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
             if (modal) {
@@ -645,4 +654,3 @@
     </script>
 </body>
 </html>
-
