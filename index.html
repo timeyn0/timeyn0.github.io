@@ -29,8 +29,6 @@
             margin: 0; 
             color: var(--text-color); 
             line-height: 1.6;
-            
-            /* พื้นหลังใหม่สไตล์ Tester (Dot Grid Pattern) สื่อถึงความแม่นยำและโครงสร้าง */
             background-color: var(--background-color);
             background-image: radial-gradient(#cbd5e1 1.5px, transparent 1.5px);
             background-size: 25px 25px;
@@ -42,11 +40,8 @@
         .hero { 
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: var(--light-text-color); 
-            padding: 6rem 0 5rem; 
-            text-align: center; 
-            box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
+            padding: 6rem 0 5rem; text-align: center; box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
+            position: relative; overflow: hidden;
         }
         .hero::before {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
@@ -68,12 +63,8 @@
         .hero nav a:hover { background: var(--secondary-color); transform: translateY(-3px); box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4); border-color: transparent;}
 
         .section { padding: 5rem 0; }
-        .section-title { 
-            text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary-color); position: relative; font-weight: 700;
-        }
-        .section-title::after {
-            content: ''; display: block; width: 80px; height: 4px; background: var(--secondary-color); margin: 15px auto 0; border-radius: 2px;
-        }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary-color); position: relative; font-weight: 700; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--secondary-color); margin: 15px auto 0; border-radius: 2px; }
 
         .portfolio-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
         @media (min-width: 768px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); } }
@@ -85,51 +76,44 @@
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
             display: flex; flex-direction: column; border: 1px solid #f1f5f9;
         }
-        .project-card:hover { 
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15); border-color: #e2e8f0;
-        }
+        .project-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15); border-color: #e2e8f0; }
         
-        .card-img-wrapper {
-            width: 100%; height: 220px; overflow: hidden; background-color: #f1f5f9; position: relative;
-        }
-        .card-img-wrapper::after {
-            content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0); transition: all 0.4s ease;
-        }
+        .card-img-wrapper { width: 100%; height: 220px; overflow: hidden; background-color: #f1f5f9; position: relative; }
+        .card-img-wrapper::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0); transition: all 0.4s ease; }
         .project-card:hover .card-img-wrapper::after { background: rgba(0,0,0,0.1); }
 
-        .card-img-wrapper img { 
-            width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s ease; 
-        }
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.6s ease; }
         .project-card:hover .card-img-wrapper img { transform: scale(1.1); }
         
         .project-info { padding: 1.8rem; flex-grow: 1; display: flex; flex-direction: column; }
         .project-info h3 { margin: 0 0 0.8rem 0; color: var(--primary-color); font-size: 1.35rem; font-weight: 700;}
         .project-info p { margin: 0; font-size: 1rem; color: #64748b; flex-grow: 1; line-height: 1.7;}
         
-        /* --- BUTTON ANIMATIONS --- */
         .button-group { margin-top: 1.8rem; display: flex; flex-direction: row; gap: 1rem; flex-wrap: wrap; }
-        
         .details-button {
             display: inline-block; text-decoration: none; padding: 0.7rem 1.4rem; 
             background-color: transparent; color: var(--secondary-color); 
-            border: 2px solid var(--secondary-color); border-radius: 8px;
-            font-size: 0.95rem; font-weight: 600; text-align: center; 
-            cursor: pointer; font-family: 'Sarabun', sans-serif; flex: 1; box-sizing: border-box;
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
-            position: relative; overflow: hidden; z-index: 1;
+            border: 2px solid var(--secondary-color); border-radius: 8px; font-size: 0.95rem; font-weight: 600; text-align: center; 
+            cursor: pointer; font-family: 'Sarabun', sans-serif; flex: 1; box-sizing: border-box; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); z-index: 1;
         }
-        .details-button:hover {
-            background-color: var(--secondary-color); color: white;
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 7px 14px rgba(59, 130, 246, 0.35); border-color: transparent;
-        }
+        .details-button:hover { background-color: var(--secondary-color); color: white; transform: translateY(-4px) scale(1.03); box-shadow: 0 7px 14px rgba(59, 130, 246, 0.35); border-color: transparent; }
         .details-button:active { transform: translateY(-1px) scale(0.98); box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3); }
-
         .details-button.primary { background-color: var(--secondary-color); color: white; }
         .details-button.primary:hover { background-color: var(--secondary-dark); box-shadow: 0 7px 14px rgba(37, 99, 235, 0.4); }
 
-        /* Modal Animations */
+        /* Skill Tags */
+        .skill-tag {
+            background: #ffffff; color: #334155; padding: 10px 20px; border-radius: 30px; 
+            font-weight: 600; font-size: 1rem; display: inline-flex; align-items: center; gap: 10px;
+            transition: all 0.3s ease; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .skill-tag:hover { background: var(--secondary-color); color: white; border-color: transparent; transform: translateY(-5px); box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4); }
+        .skill-tag i { transition: color 0.3s ease; }
+        .skill-tag:hover i { color: white !important; }
+
+        /* =========================================================
+           MODAL REDESIGN (สไตล์หน้าต่างรายละเอียดแบบมืออาชีพ)
+           ========================================================= */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); 
@@ -155,66 +139,51 @@
         }
         .modal-close:hover { color: #ef4444; background: rgba(239, 68, 68, 0.1); transform: rotate(90deg); }
         
-        .modal-content h2 { margin-top: 0; color: var(--primary-color); font-size: 1.6rem; font-weight: 700;}
-        .modal-content h3 { margin-top: 1.8rem; color: var(--secondary-color); font-size: 1.2rem; font-weight: 600;}
-        .modal-content ul { list-style: none; padding-left: 0; color: #475569; margin-bottom: 0;}
-        .modal-content ul li { padding-left: 1.5rem; position: relative; margin-bottom: 0.5rem; }
-        .modal-content ul li::before { content: '•'; color: var(--secondary-color); font-size: 1.5rem; position: absolute; left: 0; top: -5px; }
-        .modal-content p { color: #475569; line-height: 1.7; }
+        .modal-content h2 { margin-top: 0; color: var(--primary-color); font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; gap: 10px;}
+        .modal-content h3 { margin-top: 1.5rem; color: var(--secondary-color); font-size: 1.15rem; font-weight: 700; display: flex; align-items: center; gap: 8px;}
+        .modal-content p { color: #475569; line-height: 1.7; margin-bottom: 0;}
+        
+        /* เส้นคั่นใน Modal */
+        .modal-divider { border: 0; height: 1px; background: #e2e8f0; margin: 1.5rem 0; }
+        
+        /* รายการที่มีไอคอน (Bullet Points ใหม่) */
+        .modal-details-list { list-style: none; padding: 0; margin-top: 1rem; margin-bottom: 0; }
+        .modal-details-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0.8rem; color: #475569; line-height: 1.6; }
+        .modal-details-list li i { color: var(--secondary-color); margin-top: 5px; font-size: 1.1rem; flex-shrink: 0; }
+        
+        /* ป้าย Tag เครื่องมือใน Modal */
+        .tools-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
+        .tool-badge {
+            background: #f8fafc; color: #334155; padding: 6px 14px; border-radius: 8px;
+            font-size: 0.9rem; font-weight: 600; display: inline-flex; align-items: center; gap: 8px;
+            border: 1px solid #e2e8f0; transition: all 0.2s;
+        }
+        .tool-badge:hover { background: #e2e8f0; border-color: #cbd5e1; }
+        .tool-badge i { font-size: 1.1rem; }
 
-        /* Skill Tags */
-        .skill-tag {
-            background: #ffffff; color: #334155; padding: 10px 20px; border-radius: 30px; 
-            font-weight: 600; font-size: 1rem; display: inline-flex; align-items: center; gap: 10px;
-            transition: all 0.3s ease; border: 1px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .skill-tag:hover {
-            background: var(--secondary-color); color: white; border-color: transparent;
-            transform: translateY(-5px); box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
-        }
-        .skill-tag i { transition: color 0.3s ease; }
-        .skill-tag:hover i { color: white !important; }
-
-        /* --- FOOTER ดีไซน์ใหม่ สไตล์ Tester/Developer --- */
-        footer { 
-            background: #0f172a; border-top: 4px solid var(--secondary-color);
-            color: #94a3b8; padding: 4rem 0 2rem; position: relative; font-family: 'Sarabun', sans-serif;
-        }
-        .footer-content {
-            display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start;
-            max-width: 1100px; margin: auto; padding: 0 20px; gap: 2rem;
-        }
+        /* FOOTER */
+        footer { background: #0f172a; border-top: 4px solid var(--secondary-color); color: #94a3b8; padding: 4rem 0 2rem; position: relative; font-family: 'Sarabun', sans-serif;}
+        .footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; max-width: 1100px; margin: auto; padding: 0 20px; gap: 2rem; }
         .footer-logo { flex: 1; min-width: 250px; }
         .footer-logo h3 { color: #ffffff; font-size: 1.8rem; margin: 0 0 0.5rem 0; font-weight: 700; }
         .footer-logo p { margin: 0; font-size: 1rem; color: #cbd5e1; }
-        
-        /* ป้ายสถานะ Console Vibe */
         .tester-badge {
             display: inline-flex; align-items: center; gap: 8px; margin-top: 1.2rem;
             background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3);
-            color: #10b981; padding: 8px 16px; border-radius: 6px;
-            font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; font-weight: bold;
+            color: #10b981; padding: 8px 16px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; font-weight: bold;
         }
         .tester-badge i { animation: blink 2s infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
-
         .footer-contact { flex: 1; min-width: 250px; text-align: left; }
         @media (min-width: 768px) { .footer-contact { text-align: right; } }
         .footer-contact h4 { color: #ffffff; font-size: 1.2rem; margin-top: 0; margin-bottom: 1.2rem; font-weight: 600; }
-        
-        /* ปุ่ม Social / ติดต่อ */
         .footer-social { display: flex; gap: 15px; flex-wrap: wrap; }
         @media (min-width: 768px) { .footer-social { justify-content: flex-end; } }
         .social-btn {
-            display: inline-flex; align-items: center; justify-content: center;
-            width: 45px; height: 45px; background: rgba(255,255,255,0.05); color: #cbd5e1;
-            border-radius: 50%; text-decoration: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            font-size: 1.2rem; border: 1px solid rgba(255,255,255,0.1);
+            display: inline-flex; align-items: center; justify-content: center; width: 45px; height: 45px; background: rgba(255,255,255,0.05); color: #cbd5e1;
+            border-radius: 50%; text-decoration: none; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); font-size: 1.2rem; border: 1px solid rgba(255,255,255,0.1);
         }
-        .social-btn:hover {
-            background: var(--secondary-color); color: white; transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.5); border-color: transparent;
-        }
+        .social-btn:hover { background: var(--secondary-color); color: white; transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.5); border-color: transparent; }
         .footer-bottom { text-align: center; padding-top: 2rem; margin-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.9rem; }
     </style>
 </head>
@@ -308,147 +277,145 @@
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">เกียรติบัตร</h2>
                 <div class="portfolio-grid">
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-img-wrapper"><img src="files/certificate1.jpg" alt="Certificate 1"></div>
-                        <div class="project-info">
-                            <h3>เกียรติบัตรการเข้าร่วม</h3><p>ได้รับจาก: AIS</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert1')" class="details-button">รายละเอียด</button>
-                                <a href="files/certificate1.jpg" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-                        <div class="card-img-wrapper"><img src="images/CyberSec.png" alt="Certificate Cyber Security"></div>
-                        <div class="project-info">
-                            <h3>หลักสูตรความปลอดภัยทางไซเบอร์</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert2')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate2.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-img-wrapper"><img src="images/PSRUDigital.png" alt="Certificate Digital Literacy"></div>
-                        <div class="project-info">
-                            <h3>ความฉลาดรู้ทางดิจิทัล</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert3')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate3.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-img-wrapper"><img src="images/PSRUCYBER.png" alt="Certificate Hackathon"></div>
-                        <div class="project-info">
-                            <h3>การแข่งขัน Hackathon #2</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert4')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate4.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-                        <div class="card-img-wrapper"><img src="images/IOT.png" alt="Certificate IoT"></div>
-                        <div class="project-info">
-                            <h3>ความรู้เบื้องต้นเกี่ยวกับ IoT</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert5')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate5.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-img-wrapper"><img src="images/DOCKER.png" alt="Certificate"></div>
-                        <div class="project-info">
-                            <h3>การพัฒนาทักษะ Docker</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert6')" class="details-button">รายละเอียด</button>
-                                <a href="files/certificate6.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-img-wrapper"><img src="images/Python.png" alt="Certificate"></div>
-                        <div class="project-info">
-                            <h3>PCAP: การเขียนโปรแกรมด้วย Python</h3><p>ได้รับจาก: Cisco Networking Academy</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert7')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate7.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-                        <div class="card-img-wrapper"><img src="images/PSRUDigitalTest.png" alt="Certificate"></div>
-                        <div class="project-info">
-                            <h3>การประเมินความฉลาดรู้ทางดิจิทัล</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert8')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate8.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card-img-wrapper"><img src="images/BasicCyber.png" alt="Certificate"></div>
-                        <div class="project-info">
-                            <h3>พื้นฐานความปลอดภัยทางไซเบอร์</h3><p>ได้รับจาก: MOOC</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert9')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate9.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card-img-wrapper"><img src="images/Software.png" alt="Certificate Software Testing"></div>
-                        <div class="project-info">
-                            <h3>ทักษะการทดสอบซอฟต์แวร์</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert10')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate10.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150">
-                        <div class="card-img-wrapper"><img src="images/Fortinet.png" alt="Fortinet Certification"></div>
-                        <div class="project-info">
-                            <h3>Fortinet Network Security Expert</h3><p>ได้รับจาก: Fortinet</p>
-                            <div class="button-group">
-                                <button onclick="openModal('modal-cert11')" class="details-button">รายละเอียด</button>
-                                <a href="files/Certificate11.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="files/certificate1.jpg" alt="Certificate 1"></div><div class="project-info"><h3>เกียรติบัตรการเข้าร่วม</h3><p>ได้รับจาก: AIS</p><div class="button-group"><button onclick="openModal('modal-cert1')" class="details-button">รายละเอียด</button><a href="files/certificate1.jpg" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/CyberSec.png" alt="Certificate Cyber Security"></div><div class="project-info"><h3>หลักสูตรความปลอดภัยทางไซเบอร์</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert2')" class="details-button">รายละเอียด</button><a href="files/Certificate2.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"><div class="card-img-wrapper"><img src="images/PSRUDigital.png" alt="Certificate Digital Literacy"></div><div class="project-info"><h3>ความฉลาดรู้ทางดิจิทัล</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert3')" class="details-button">รายละเอียด</button><a href="files/Certificate3.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="images/PSRUCYBER.png" alt="Certificate Hackathon"></div><div class="project-info"><h3>การแข่งขัน Hackathon #2</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert4')" class="details-button">รายละเอียด</button><a href="files/Certificate4.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/IOT.png" alt="Certificate IoT"></div><div class="project-info"><h3>ความรู้เบื้องต้นเกี่ยวกับ IoT</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert5')" class="details-button">รายละเอียด</button><a href="files/Certificate5.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"><div class="card-img-wrapper"><img src="images/DOCKER.png" alt="Certificate"></div><div class="project-info"><h3>การพัฒนาทักษะ Docker</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert6')" class="details-button">รายละเอียด</button><a href="files/certificate6.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="images/Python.png" alt="Certificate"></div><div class="project-info"><h3>PCAP: การเขียนโปรแกรมด้วย Python</h3><p>ได้รับจาก: Cisco Networking Academy</p><div class="button-group"><button onclick="openModal('modal-cert7')" class="details-button">รายละเอียด</button><a href="files/Certificate7.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/PSRUDigitalTest.png" alt="Certificate"></div><div class="project-info"><h3>การประเมินความฉลาดรู้ทางดิจิทัล</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert8')" class="details-button">รายละเอียด</button><a href="files/Certificate8.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"><div class="card-img-wrapper"><img src="images/BasicCyber.png" alt="Certificate"></div><div class="project-info"><h3>พื้นฐานความปลอดภัยทางไซเบอร์</h3><p>ได้รับจาก: MOOC</p><div class="button-group"><button onclick="openModal('modal-cert9')" class="details-button">รายละเอียด</button><a href="files/Certificate9.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="images/Software.png" alt="Certificate Software Testing"></div><div class="project-info"><h3>ทักษะการทดสอบซอฟต์แวร์</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert10')" class="details-button">รายละเอียด</button><a href="files/Certificate10.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/Fortinet.png" alt="Fortinet Certification"></div><div class="project-info"><h3>Fortinet Network Security Expert</h3><p>ได้รับจาก: Fortinet</p><div class="button-group"><button onclick="openModal('modal-cert11')" class="details-button">รายละเอียด</button><a href="files/Certificate11.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <div id="modal-project1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>ทดสอบแอปพลิเคชัน 'เที่ยวชุมชน'</h2><p>ดำเนินการทดสอบแอปพลิเคชัน 'เที่ยวชุมชน' ทั้งในรูปแบบ Manual และ Automated Testing เพื่อค้นหาข้อบกพร่อง (Bugs) และตรวจสอบการทำงานของฟีเจอร์ต่างๆ ให้เป็นไปตามที่ออกแบบไว้</p><h3>เครื่องมือที่ใช้ (Tools Used):</h3><ul><li>Appium</li><li>Visual Studio Code (สำหรับเขียนสคริปต์ทดสอบ)</li><li>Google Sheets (สำหรับ Test Cases)</li><li>Python</li><li>Android Studio (สำหรับจำลองแอปพลิเคชั่น)</li></ul></div></div>
-    <div id="modal-project2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>ทดสอบแอปฯ PSRU Bus (Prompt Go)</h2><p>ออกแบบและพัฒนาสคริปต์สำหรับทดสอบแอปพลิเคชัน PSRU Bus แบบอัตโนมัติ เพื่อตรวจสอบความถูกต้องของการแสดงตำแหน่งรถไฟฟ้าแบบเรียลไทม์ และทดสอบประสิทธิภาพของระบบ</p><h3>เครื่องมือที่ใช้ (Tools Used):</h3><ul><li>Appium</li><li>Visual Studio Code (สำหรับเขียนสคริปต์ทดสอบ)</li><li>Google Sheets (สำหรับ Test Cases)</li><li>Python</li><li>Android Studio (สำหรับจำลองแอปพลิเคชั่น)</li></ul></div></div>
-    <div id="modal-project3" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>ทดสอบระบบแบบสอบถาม (Survey System)</h2><p>โปรเจกต์สหกิจศึกษาที่เน้นการประกันคุณภาพซอฟต์แวร์สำหรับระบบประเมินผลและแบบสอบถาม ทำงานร่วมกับทีมพัฒนาเพื่อปรับปรุงระบบให้พร้อมใช้งานจริง</p><h3>รายละเอียดการทำงาน:</h3><ul><li>วิเคราะห์และออกแบบ Flowchart การทำงานของระบบเพื่อหา Edge Cases</li><li>เขียน Test Case ครอบคลุมฟีเจอร์หลัก เช่น การสร้างแบบสอบถาม, การจัดการเวอร์ชัน (Version Control) และรูปแบบคำถามประเภทต่างๆ</li><li>ใช้งาน Excel (Web Version) ในการจัดการ เขียนสูตร และติดตามสถานะของ Test Case</li></ul></div></div>
-    <div id="modal-activity1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>กิจกรรมอบรมแอปฯ 'เที่ยวชุมชน'</h2><p>ลงพื้นที่จัดกิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน” ให้แก่กลุ่มตัวอย่างผู้ใช้งานใน อ.คีรีมาส จ.สุโขทัย การอบรมเน้นการปฏิบัติจริง พร้อมแลกเปลี่ยนความคิดเห็นเพื่อนำมาปรับปรุงแอปพลิเคชัน</p><h3>ทักษะที่ได้รับ:</h3><ul><li>การสื่อสารและการนำเสนอ</li><li>การเก็บรวบรวม Feedback จากผู้ใช้งาน</li><li>การทำงานร่วมกับชุมชน</li></ul></div></div>
-    <div id="modal-activity2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>ทัศนศึกษา AUTOMATION EXPO 2025</h2><p>ทัศนศึกษาดูงานด้านเทคโนโลยีระบบอัตโนมัติและหุ่นยนต์ ณ ศูนย์ประชุมนานาชาตินงนุชพัทยา และ EEC Automation Park มหาวิทยาลัยบูรพา เพื่อเรียนรู้เทคโนโลยีอุตสาหกรรม 4.0</p><h3>สิ่งที่ได้เรียนรู้:</h3><ul><li>เทคโนโลยี IIoT (Industrial Internet of Things)</li><li>ระบบแขนกลและหุ่นยนต์ในโรงงานอุตสาหกรรม</li><li>โซลูชันด้าน Automation สมัยใหม่</li></ul></div></div>
-    <div id="modal-cert1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>เกียรติบัตรการเข้าร่วม</h2><p>เข้าร่วมกิจกรรม อุ่นใจไซเบอร์ จัดโดย AIS</p><h3>หัวข้อหลัก:</h3><ul><li>อุ่นใจไซเบอร์</li></ul></div></div>
-    <div id="modal-cert2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>หลักสูตรความปลอดภัยทางไซเบอร์</h2><p>ผ่านการอบรมหลักสูตร Cybersecurity Essentials ที่ครอบคลุมความรู้พื้นฐานด้านการป้องกันภัยคุกคามทางไซเบอร์</p><h3>หัวข้อหลัก:</h3><ul><li>Threats, Vulnerabilities, and Attacks</li><li>Network Security</li><li>Cryptography Basics</li></ul></div></div>
-    <div id="modal-cert3" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>ความฉลาดรู้ทางดิจิทัล</h2><p>ผ่านการทดสอบความเข้าใจและการใช้เทคโนโลยีดิจิทัลในชีวิตประจำวัน</p></div></div>
-    <div id="modal-cert4" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>การแข่งขัน Hackathon #2</h2><p>เข้าร่วมการแข่งขันพัฒนาซอฟต์แวร์</p></div></div>
-    <div id="modal-cert5" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>ความรู้เบื้องต้นเกี่ยวกับ IoT</h2><p>ผ่านการอบรมหลักสูตร Introduction to Internet of Things ที่ครอบคลุมพื้นฐานการทำงานของอุปกรณ์และเครือข่าย IoT</p></div></div>
-    <div id="modal-cert6" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>การพัฒนาทักษะ Docker</h2><p>เรียนรู้พื้นฐานการใช้งาน Docker สำหรับการสร้างและจัดการ Container</p></div></div>
-    <div id="modal-cert7" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>PCAP: การเขียนโปรแกรมด้วย Python</h2><p>ผ่านการอบรมหลักสูตรการเขียนโปรแกรมภาษา Python ขั้นพื้นฐานถึงระดับกลางจาก Cisco Networking Academy</p></div></div>
-    <div id="modal-cert8" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>การประเมินความฉลาดรู้ทางดิจิทัล</h2><p>ผ่านการประเมินความสามารถด้าน Digital Literacy ตามมาตรฐาน</p></div></div>
-    <div id="modal-cert9" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>พื้นฐานความปลอดภัยทางไซเบอร์</h2><p>เรียนรู้แนวคิดหลักด้านความปลอดภัยบนโลกไซเบอร์ผ่านแพลตฟอร์ม MOOC</p></div></div>
-    <div id="modal-cert10" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>ทักษะการทดสอบซอฟต์แวร์</h2><p>เรียนรู้กระบวนการและเทคนิคต่างๆ ในการทดสอบซอฟต์แวร์เพื่อประกันคุณภาพ</p></div></div>
-    <div id="modal-cert11" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2>Fortinet Network Security Expert</h2><p>ผ่านการรับรองความสามารถด้านความปลอดภัยเครือข่ายจาก Fortinet ในระดับ NSE 1 & 2</p></div></div>
+    <div id="modal-project1" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(this)">&times;</button>
+            <h2><i class="fa-solid fa-mobile-screen-button" style="color: var(--secondary-color);"></i> ทดสอบแอปพลิเคชัน 'เที่ยวชุมชน'</h2>
+            <p>ดำเนินการทดสอบแอปพลิเคชัน 'เที่ยวชุมชน' ทั้งในรูปแบบ Manual และ Automated Testing เพื่อค้นหาข้อบกพร่อง (Bugs) และตรวจสอบการทำงานของฟีเจอร์ต่างๆ ให้เป็นไปตามที่ออกแบบไว้</p>
+            
+            <hr class="modal-divider">
+            
+            <h3><i class="fa-solid fa-list-check"></i> รายละเอียดการทำงาน</h3>
+            <ul class="modal-details-list">
+                <li><i class="fa-solid fa-check-circle"></i> ออกแบบและรัน Test Case เพื่อครอบคลุมฟังก์ชันการใช้งานของ User</li>
+                <li><i class="fa-solid fa-bug"></i> ค้นหาและบันทึกข้อบกพร่อง (Bugs) เพื่อส่งต่อให้ทีมพัฒนาแก้ไข</li>
+                <li><i class="fa-solid fa-robot"></i> จัดทำสคริปต์ Automated Testing เพื่อลดเวลาการทดสอบซ้ำ</li>
+            </ul>
+
+            <hr class="modal-divider">
+
+            <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่ใช้ (Tools)</h3>
+            <div class="tools-container">
+                <span class="tool-badge"><i class="fa-solid fa-mobile-screen-button" style="color: #334155;"></i> Appium</span>
+                <span class="tool-badge"><i class="fa-solid fa-code" style="color: #007acc;"></i> VS Code</span>
+                <span class="tool-badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Python</span>
+                <span class="tool-badge"><i class="fa-solid fa-file-excel" style="color: #107c41;"></i> Google Sheets</span>
+                <span class="tool-badge"><i class="fa-brands fa-android" style="color: #3ddc84;"></i> Android Studio</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-project2" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(this)">&times;</button>
+            <h2><i class="fa-solid fa-bus" style="color: var(--secondary-color);"></i> ทดสอบแอปฯ PSRU Bus (Prompt Go)</h2>
+            <p>ออกแบบและพัฒนาสคริปต์สำหรับทดสอบแอปพลิเคชัน PSRU Bus แบบอัตโนมัติ เพื่อตรวจสอบความถูกต้องของการแสดงตำแหน่งรถไฟฟ้าแบบเรียลไทม์ และทดสอบประสิทธิภาพของระบบ</p>
+            
+            <hr class="modal-divider">
+            
+            <h3><i class="fa-solid fa-list-check"></i> รายละเอียดการทำงาน</h3>
+            <ul class="modal-details-list">
+                <li><i class="fa-solid fa-location-dot"></i> ทดสอบความแม่นยำของการติดตามและแสดงตำแหน่งรถแบบ Real-time</li>
+                <li><i class="fa-solid fa-robot"></i> พัฒนาสคริปต์ Automation เพื่อจำลองการใช้งานในสถานการณ์ต่างๆ</li>
+            </ul>
+
+            <hr class="modal-divider">
+
+            <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่ใช้ (Tools)</h3>
+            <div class="tools-container">
+                <span class="tool-badge"><i class="fa-solid fa-mobile-screen-button" style="color: #334155;"></i> Appium</span>
+                <span class="tool-badge"><i class="fa-solid fa-code" style="color: #007acc;"></i> VS Code</span>
+                <span class="tool-badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Python</span>
+                <span class="tool-badge"><i class="fa-solid fa-file-excel" style="color: #107c41;"></i> Google Sheets</span>
+                <span class="tool-badge"><i class="fa-brands fa-android" style="color: #3ddc84;"></i> Android Studio</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-project3" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(this)">&times;</button>
+            <h2><i class="fa-solid fa-clipboard-question" style="color: var(--secondary-color);"></i> ทดสอบระบบแบบสอบถาม (Survey System)</h2>
+            <p>โปรเจกต์สหกิจศึกษาที่เน้นการประกันคุณภาพซอฟต์แวร์สำหรับระบบประเมินผลและแบบสอบถาม ทำงานร่วมกับทีมพัฒนาเพื่อปรับปรุงระบบให้พร้อมใช้งานจริง</p>
+            
+            <hr class="modal-divider">
+
+            <h3><i class="fa-solid fa-list-check"></i> รายละเอียดการทำงาน</h3>
+            <ul class="modal-details-list">
+                <li><i class="fa-solid fa-sitemap"></i> วิเคราะห์และออกแบบ Flowchart การทำงานของระบบเพื่อหา Edge Cases</li>
+                <li><i class="fa-solid fa-file-signature"></i> เขียน Test Case ครอบคลุมการสร้างแบบสอบถาม, จัดการเวอร์ชัน และคำถามรูปแบบต่างๆ</li>
+                <li><i class="fa-solid fa-table-list"></i> ใช้งาน Excel ในการจัดการ เขียนสูตร และติดตามสถานะของ Test Case (Test Management)</li>
+            </ul>
+
+            <hr class="modal-divider">
+
+            <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่ใช้ (Tools)</h3>
+            <div class="tools-container">
+                <span class="tool-badge"><i class="fa-solid fa-file-excel" style="color: #107c41;"></i> Excel (Web Version)</span>
+                <span class="tool-badge"><i class="fa-solid fa-diagram-project" style="color: #f59e0b;"></i> Flowchart Tools</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal-activity1" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(this)">&times;</button>
+            <h2><i class="fa-solid fa-person-chalkboard" style="color: var(--secondary-color);"></i> กิจกรรมอบรมแอปฯ 'เที่ยวชุมชน'</h2>
+            <p>ลงพื้นที่จัดกิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน” ให้แก่กลุ่มตัวอย่างผู้ใช้งานใน อ.คีรีมาส จ.สุโขทัย การอบรมเน้นการปฏิบัติจริง พร้อมแลกเปลี่ยนความคิดเห็นเพื่อนำมาปรับปรุงแอปพลิเคชัน</p>
+            
+            <hr class="modal-divider">
+
+            <h3><i class="fa-solid fa-lightbulb"></i> ทักษะและประสบการณ์ที่ได้รับ</h3>
+            <ul class="modal-details-list">
+                <li><i class="fa-solid fa-users"></i> ทักษะการสื่อสารและการนำเสนอต่อหน้าชุมชน</li>
+                <li><i class="fa-solid fa-comments"></i> การเก็บรวบรวม Feedback จากผู้ใช้งานจริง (User Feedback) เพื่อหาจุดบกพร่อง (UX/UI Issues)</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="modal-activity2" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal(this)">&times;</button>
+            <h2><i class="fa-solid fa-industry" style="color: var(--secondary-color);"></i> ทัศนศึกษา AUTOMATION EXPO 2025</h2>
+            <p>ทัศนศึกษาดูงานด้านเทคโนโลยีระบบอัตโนมัติและหุ่นยนต์ ณ ศูนย์ประชุมนานาชาตินงนุชพัทยา และ EEC Automation Park มหาวิทยาลัยบูรพา เพื่อเรียนรู้เทคโนโลยีอุตสาหกรรม 4.0</p>
+            
+            <hr class="modal-divider">
+
+            <h3><i class="fa-solid fa-eye"></i> สิ่งที่ได้เรียนรู้</h3>
+            <ul class="modal-details-list">
+                <li><i class="fa-solid fa-network-wired"></i> เทคโนโลยี IIoT (Industrial Internet of Things)</li>
+                <li><i class="fa-solid fa-robot"></i> ระบบแขนกลและหุ่นยนต์ในโรงงานอุตสาหกรรม</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-cert1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> เกียรติบัตรการเข้าร่วม</h2><p>เข้าร่วมกิจกรรม อุ่นใจไซเบอร์ จัดโดย AIS</p><hr class="modal-divider"><h3><i class="fa-solid fa-book-open"></i> หัวข้อหลัก</h3><ul class="modal-details-list"><li><i class="fa-solid fa-check"></i> อุ่นใจไซเบอร์</li></ul></div></div>
+    <div id="modal-cert2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> หลักสูตรความปลอดภัยทางไซเบอร์</h2><p>ผ่านการอบรมหลักสูตร Cybersecurity Essentials ครอบคลุมความรู้พื้นฐานด้านการป้องกันภัยคุกคามทางไซเบอร์</p><hr class="modal-divider"><h3><i class="fa-solid fa-book-open"></i> หัวข้อหลัก</h3><ul class="modal-details-list"><li><i class="fa-solid fa-shield-halved"></i> Threats, Vulnerabilities, and Attacks</li><li><i class="fa-solid fa-network-wired"></i> Network Security</li><li><i class="fa-solid fa-key"></i> Cryptography Basics</li></ul></div></div>
+    <div id="modal-cert3" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> ความฉลาดรู้ทางดิจิทัล</h2><p>ผ่านการทดสอบความเข้าใจและการใช้เทคโนโลยีดิจิทัลในชีวิตประจำวัน</p></div></div>
+    <div id="modal-cert4" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> การแข่งขัน Hackathon #2</h2><p>เข้าร่วมการแข่งขันพัฒนาซอฟต์แวร์</p></div></div>
+    <div id="modal-cert5" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> ความรู้เบื้องต้นเกี่ยวกับ IoT</h2><p>ผ่านการอบรมหลักสูตร Introduction to Internet of Things ครอบคลุมพื้นฐานการทำงานของอุปกรณ์และเครือข่าย IoT</p></div></div>
+    <div id="modal-cert6" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> การพัฒนาทักษะ Docker</h2><p>เรียนรู้พื้นฐานการใช้งาน Docker สำหรับการสร้างและจัดการ Container</p></div></div>
+    <div id="modal-cert7" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> PCAP: การเขียนโปรแกรมด้วย Python</h2><p>ผ่านการอบรมหลักสูตรการเขียนโปรแกรมภาษา Python ขั้นพื้นฐานถึงระดับกลางจาก Cisco Networking Academy</p></div></div>
+    <div id="modal-cert8" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> การประเมินความฉลาดรู้ทางดิจิทัล</h2><p>ผ่านการประเมินความสามารถด้าน Digital Literacy ตามมาตรฐาน</p></div></div>
+    <div id="modal-cert9" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> พื้นฐานความปลอดภัยทางไซเบอร์</h2><p>เรียนรู้แนวคิดหลักด้านความปลอดภัยบนโลกไซเบอร์ผ่านแพลตฟอร์ม MOOC</p></div></div>
+    <div id="modal-cert10" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> ทักษะการทดสอบซอฟต์แวร์</h2><p>เรียนรู้กระบวนการและเทคนิคต่างๆ ในการทดสอบซอฟต์แวร์เพื่อประกันคุณภาพ</p></div></div>
+    <div id="modal-cert11" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> Fortinet Network Security Expert</h2><p>ผ่านการรับรองความสามารถด้านความปลอดภัยเครือข่ายจาก Fortinet ในระดับ NSE 1 & 2</p></div></div>
 
     <footer>
         <div class="footer-content" data-aos="fade-up">
@@ -462,7 +429,7 @@
             <div class="footer-contact">
                 <h4>ช่องทางการติดต่อ</h4>
                 <div class="footer-social">
-                    <a href="mailto:wkanthaka@gmail.com" class="social-btn" title="ส่งอีเมลหาฉัน"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="mailto:wkanthaka@gmail.com?subject=สนใจติดต่องานตำแหน่ง%20Software%20Tester/QA" class="social-btn" title="ส่งอีเมลหาฉัน"><i class="fa-solid fa-envelope"></i></a>
                     <a href="#" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a href="#" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
@@ -482,4 +449,3 @@
     </script>
 </body>
 </html>
-
