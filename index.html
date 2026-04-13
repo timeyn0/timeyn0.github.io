@@ -98,8 +98,6 @@
         }
         .details-button:hover { background-color: var(--secondary-color); color: white; transform: translateY(-4px) scale(1.03); box-shadow: 0 7px 14px rgba(59, 130, 246, 0.35); border-color: transparent; }
         .details-button:active { transform: translateY(-1px) scale(0.98); box-shadow: 0 3px 8px rgba(59, 130, 246, 0.3); }
-        .details-button.primary { background-color: var(--secondary-color); color: white; }
-        .details-button.primary:hover { background-color: var(--secondary-dark); box-shadow: 0 7px 14px rgba(37, 99, 235, 0.4); }
 
         .skill-tag {
             background: #ffffff; color: #334155; padding: 10px 20px; border-radius: 30px; 
@@ -152,7 +150,6 @@
             border: 1px solid #e2e8f0; transition: all 0.2s;
         }
         .tool-badge:hover { background: #e2e8f0; border-color: #cbd5e1; }
-        .tool-badge i { font-size: 1.1rem; }
 
         .video-container {
             position: relative; padding-bottom: 56.25%; height: 0;
@@ -161,6 +158,36 @@
         }
         .video-container iframe {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+        }
+
+        /* Video Gallery สำหรับ Robot Framework */
+        .video-gallery {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .video-gallery { grid-template-columns: repeat(2, 1fr); }
+        }
+        .gallery-item {
+            background: #f8fafc;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+        }
+        .gallery-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
+        }
+        .gallery-item h4 {
+            margin-top: 0; margin-bottom: 0.8rem; font-size: 1.1rem; color: var(--secondary-dark);
+            display: flex; align-items: center; gap: 8px;
+        }
+        .gallery-desc {
+            font-size: 0.9rem; color: #475569; margin-top: 0.8rem; margin-bottom: 0; line-height: 1.5;
         }
 
         /* FOOTER */
@@ -223,6 +250,7 @@
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">โปรเจกต์</h2>
                 <div class="portfolio-grid">
+                    
                     <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                         <div class="card-img-wrapper"><img src="images/T6.png" alt="Manual ThiaoChumChon App"></div>
                         <div class="project-info">
@@ -247,6 +275,17 @@
                             <h3>ทดสอบเว็บด้วย Playwright (POM)</h3>
                             <p>โปรเจกต์เรียนรู้การทดสอบซอฟต์แวร์อัตโนมัติด้วย Playwright Framework โดยใช้โครงสร้าง Page Object Model</p>
                             <div class="button-group"><button onclick="openModal('modal-project3')" class="details-button">ดูรายละเอียด</button></div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="card-img-wrapper">
+                            <img src="images/robot-cover.png" alt="Robot Framework Suite" style="background-color: #1e293b;">
+                        </div>
+                        <div class="project-info">
+                            <h3>ทดสอบระบบด้วย Robot Framework</h3>
+                            <p>คอลเลกชันวิดีโอสาธิตการเขียนสคริปต์ทดสอบอัตโนมัติด้วย Robot Framework ควบคู่กับการใช้ Excel และ Database</p>
+                            <div class="button-group"><button onclick="openModal('modal-project4')" class="details-button">เปิดคลังวิดีโอ</button></div>
                         </div>
                     </div>
                     
@@ -282,17 +321,12 @@
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">เกียรติบัตร</h2>
                 <div class="portfolio-grid">
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="files/certificate1.jpg" alt="Certificate 1"></div><div class="project-info"><h3>เกียรติบัตรการเข้าร่วม</h3><p>ได้รับจาก: AIS</p><div class="button-group"><button onclick="openModal('modal-cert1')" class="details-button">รายละเอียด</button><a href="files/certificate1.jpg" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/CyberSec.png" alt="Certificate Cyber Security"></div><div class="project-info"><h3>หลักสูตรความปลอดภัยทางไซเบอร์</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert2')" class="details-button">รายละเอียด</button><a href="files/Certificate2.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"><div class="card-img-wrapper"><img src="images/PSRUDigital.png" alt="Certificate Digital Literacy"></div><div class="project-info"><h3>ความฉลาดรู้ทางดิจิทัล</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert3')" class="details-button">รายละเอียด</button><a href="files/Certificate3.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="images/PSRUCYBER.png" alt="Certificate Hackathon"></div><div class="project-info"><h3>การแข่งขัน Hackathon #2</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert4')" class="details-button">รายละเอียด</button><a href="files/Certificate4.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/IOT.png" alt="Certificate IoT"></div><div class="project-info"><h3>ความรู้เบื้องต้นเกี่ยวกับ IoT</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert5')" class="details-button">รายละเอียด</button><a href="files/Certificate5.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"><div class="card-img-wrapper"><img src="images/DOCKER.png" alt="Certificate"></div><div class="project-info"><h3>การพัฒนาทักษะ Docker</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert6')" class="details-button">รายละเอียด</button><a href="files/certificate6.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="images/Python.png" alt="Certificate"></div><div class="project-info"><h3>PCAP: การเขียนโปรแกรมด้วย Python</h3><p>ได้รับจาก: Cisco Networking Academy</p><div class="button-group"><button onclick="openModal('modal-cert7')" class="details-button">รายละเอียด</button><a href="files/Certificate7.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/PSRUDigitalTest.png" alt="Certificate"></div><div class="project-info"><h3>การประเมินความฉลาดรู้ทางดิจิทัล</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert8')" class="details-button">รายละเอียด</button><a href="files/Certificate8.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"><div class="card-img-wrapper"><img src="images/BasicCyber.png" alt="Certificate"></div><div class="project-info"><h3>พื้นฐานความปลอดภัยทางไซเบอร์</h3><p>ได้รับจาก: MOOC</p><div class="button-group"><button onclick="openModal('modal-cert9')" class="details-button">รายละเอียด</button><a href="files/Certificate9.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="images/Software.png" alt="Certificate Software Testing"></div><div class="project-info"><h3>ทักษะการทดสอบซอฟต์แวร์</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert10')" class="details-button">รายละเอียด</button><a href="files/Certificate10.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/Fortinet.png" alt="Fortinet Certification"></div><div class="project-info"><h3>Fortinet Network Security Expert</h3><p>ได้รับจาก: Fortinet</p><div class="button-group"><button onclick="openModal('modal-cert11')" class="details-button">รายละเอียด</button><a href="files/Certificate11.pdf" target="_blank" class="details-button primary">ดูเกียรติบัตร</a></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="files/certificate1.jpg" alt="Certificate 1"></div><div class="project-info"><h3>เกียรติบัตรการเข้าร่วม</h3><p>ได้รับจาก: AIS</p><div class="button-group"><button onclick="openModal('modal-cert1')" class="details-button">รายละเอียด</button></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/CyberSec.png" alt="Certificate Cyber Security"></div><div class="project-info"><h3>หลักสูตรความปลอดภัยทางไซเบอร์</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert2')" class="details-button">รายละเอียด</button></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"><div class="card-img-wrapper"><img src="images/PSRUDigital.png" alt="Certificate Digital Literacy"></div><div class="project-info"><h3>ความฉลาดรู้ทางดิจิทัล</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert3')" class="details-button">รายละเอียด</button></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="100"><div class="card-img-wrapper"><img src="images/PSRUCYBER.png" alt="Certificate Hackathon"></div><div class="project-info"><h3>การแข่งขัน Hackathon #2</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert4')" class="details-button">รายละเอียด</button></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="150"><div class="card-img-wrapper"><img src="images/IOT.png" alt="Certificate IoT"></div><div class="project-info"><h3>ความรู้เบื้องต้นเกี่ยวกับ IoT</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert5')" class="details-button">รายละเอียด</button></div></div></div>
+                    <div class="project-card" data-aos="fade-up" data-aos-delay="200"><div class="card-img-wrapper"><img src="images/DOCKER.png" alt="Certificate"></div><div class="project-info"><h3>การพัฒนาทักษะ Docker</h3><p>ได้รับจาก: มหาวิทยาลัยราชภัฏพิบูลสงคราม</p><div class="button-group"><button onclick="openModal('modal-cert6')" class="details-button">รายละเอียด</button></div></div></div>
                 </div>
             </div>
         </section>
@@ -303,29 +337,15 @@
             <button class="modal-close" onclick="closeModal(this)">&times;</button>
             <h2><i class="fa-solid fa-mobile-screen-button" style="color: var(--secondary-color);"></i> ทดสอบแอปพลิเคชัน 'เที่ยวชุมชน'</h2>
             <p>ดำเนินการทดสอบแอปพลิเคชัน 'เที่ยวชุมชน' ทั้งในรูปแบบ Manual และ Automated Testing เพื่อค้นหาข้อบกพร่อง (Bugs) และตรวจสอบการทำงานของฟีเจอร์ต่างๆ ให้เป็นไปตามที่ออกแบบไว้</p>
-            
             <hr class="modal-divider">
-            
             <h3><i class="fa-solid fa-list-check"></i> รายละเอียดการทำงาน</h3>
             <ul class="modal-details-list">
                 <li><i class="fa-solid fa-check-circle"></i> ออกแบบและรัน Test Case เพื่อครอบคลุมฟังก์ชันการใช้งานของ User</li>
                 <li><i class="fa-solid fa-bug"></i> ค้นหาและบันทึกข้อบกพร่อง (Bugs) เพื่อส่งต่อให้ทีมพัฒนาแก้ไข</li>
                 <li><i class="fa-solid fa-robot"></i> จัดทำสคริปต์ Automated Testing เพื่อลดเวลาการทดสอบซ้ำ</li>
             </ul>
-
             <div class="video-container">
                 <iframe src="https://www.loom.com/embed/b208f4b0a9854201a29bcb7a340aebd9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-            </div>
-
-            <hr class="modal-divider">
-
-            <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่ใช้ (Tools)</h3>
-            <div class="tools-container">
-                <span class="tool-badge"><i class="fa-solid fa-mobile-screen-button" style="color: #334155;"></i> Appium</span>
-                <span class="tool-badge"><i class="fa-solid fa-code" style="color: #007acc;"></i> VS Code</span>
-                <span class="tool-badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Python</span>
-                <span class="tool-badge"><i class="fa-solid fa-file-excel" style="color: #107c41;"></i> Google Sheets</span>
-                <span class="tool-badge"><i class="fa-brands fa-android" style="color: #3ddc84;"></i> Android Studio</span>
             </div>
         </div>
     </div>
@@ -341,15 +361,6 @@
                 <li><i class="fa-solid fa-location-dot"></i> ทดสอบความแม่นยำของการติดตามและแสดงตำแหน่งรถแบบ Real-time</li>
                 <li><i class="fa-solid fa-robot"></i> พัฒนาสคริปต์ Automation เพื่อจำลองการใช้งานในสถานการณ์ต่างๆ</li>
             </ul>
-            <hr class="modal-divider">
-            <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่ใช้ (Tools)</h3>
-            <div class="tools-container">
-                <span class="tool-badge"><i class="fa-solid fa-mobile-screen-button" style="color: #334155;"></i> Appium</span>
-                <span class="tool-badge"><i class="fa-solid fa-code" style="color: #007acc;"></i> VS Code</span>
-                <span class="tool-badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Python</span>
-                <span class="tool-badge"><i class="fa-solid fa-file-excel" style="color: #107c41;"></i> Google Sheets</span>
-                <span class="tool-badge"><i class="fa-brands fa-android" style="color: #3ddc84;"></i> Android Studio</span>
-            </div>
         </div>
     </div>
 
@@ -358,60 +369,100 @@
             <button class="modal-close" onclick="closeModal(this)">&times;</button>
             <h2><i class="fa-solid fa-robot" style="color: var(--secondary-color);"></i> ทดสอบเว็บด้วย Playwright (POM)</h2>
             <p>การพัฒนาสคริปต์ทดสอบซอฟต์แวร์อัตโนมัติ (Automated Testing) ด้วย Playwright Framework สำหรับระบบ Login ของเว็บไซต์ saucedemo.com โดยประยุกต์ใช้โครงสร้างโค้ดแบบ Page Object Model (POM)</p>
-            
             <hr class="modal-divider">
-            
             <h3><i class="fa-solid fa-list-check"></i> รายละเอียดการทำงาน</h3>
             <ul class="modal-details-list">
                 <li><i class="fa-solid fa-check-circle"></i> ออกแบบและเขียน Test Script สำหรับทดสอบระบบ Login ทั้งกรณีสำเร็จและล้มเหลว</li>
                 <li><i class="fa-solid fa-layer-group"></i> จัดโครงสร้างโค้ดด้วย Page Object Model (POM) เพื่อให้ง่ายต่อการบำรุงรักษาและลดความซ้ำซ้อน</li>
-                <li><i class="fa-solid fa-magnifying-glass-chart"></i> จัดทำรายงานผลการทดสอบอัตโนมัติ (HTML Report) ตรวจสอบสถานะ Passed/Failed และระยะเวลาการรัน</li>
             </ul>
-
             <div class="video-container">
                 <iframe src="https://www.loom.com/embed/5cfd1bc9ee1a47c2a24bcdd5dce2936c" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
             </div>
+        </div>
+    </div>
 
+    <div id="modal-project4" class="modal">
+        <div class="modal-content" style="max-width: 900px;"> <button class="modal-close" onclick="closeModal(this)">&times;</button>
+            <h2><i class="fa-solid fa-robot" style="color: var(--secondary-color);"></i> รวมผลงาน Automated Testing (Robot Framework)</h2>
+            <p>คอลเลกชันวิดีโอสาธิตการพัฒนาและรัน Test Script อัตโนมัติด้วย Robot Framework โดยเน้นการประยุกต์ใช้ร่วมกับเครื่องมือจัดการข้อมูลและระบบฐานข้อมูลต่างๆ อย่างครอบคลุม</p>
+            
             <hr class="modal-divider">
 
-            <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่ใช้ (Tools)</h3>
-            <div class="tools-container">
-                <span class="tool-badge"><i class="fa-solid fa-masks-theater" style="color: #2ebd59;"></i> Playwright</span>
-                <span class="tool-badge"><i class="fa-brands fa-js" style="color: #f7df1e;"></i> JavaScript</span>
-                <span class="tool-badge"><i class="fa-brands fa-node-js" style="color: #339933;"></i> Node.js</span>
-                <span class="tool-badge"><i class="fa-solid fa-code" style="color: #007acc;"></i> VS Code</span>
+            <div class="video-gallery">
+                <div class="gallery-item">
+                    <h4>1. Testing Login Page</h4>
+                    <div class="video-container" style="margin: 0;">
+                        <iframe src="https://www.loom.com/embed/a242392405294e33bc42eb04649f2724" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <p class="gallery-desc">สาธิตการเขียนสคริปต์ทดสอบหน้า Login พื้นฐานด้วย Robot Framework ตรวจสอบการทำงานเมื่อกรอกข้อมูลถูกต้องและไม่ถูกต้อง</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h4>2. Working With External Database</h4>
+                    <div class="video-container" style="margin: 0;">
+                        <iframe src="https://www.loom.com/embed/9787cc6c9d344ccda8948789cae913b1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <p class="gallery-desc">สาธิตการทำงานร่วมกับ DatabaseLibrary เพื่อทำการเชื่อมต่อ ดึงข้อมูล และจัดการกับฐานข้อมูลภายนอก (External Database)</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h4>3. External Database + Login Page</h4>
+                    <div class="video-container" style="margin: 0;">
+                        <iframe src="https://www.loom.com/embed/9851c6b64abd4b26a546cd4358e2def0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <p class="gallery-desc">นำข้อมูลที่ Query มาจากฐานข้อมูลภายนอก (External Database) มาประยุกต์ใช้เพื่อตรวจสอบความถูกต้องและเงื่อนไขการ Login</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h4>4. RPA.Excel.Files</h4>
+                    <div class="video-container" style="margin: 0;">
+                        <iframe src="https://www.loom.com/embed/3c33bf6660cc410e9106501bab5078e7" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <p class="gallery-desc">การประยุกต์ใช้แนวคิดกระบวนการอัตโนมัติ (RPA) จัดการไฟล์เอกสาร Excel เพื่ออ่านและเขียนข้อมูลทดสอบอัตโนมัติ</p>
+                </div>
+
+                <div class="gallery-item">
+                    <h4>5. ExcelLibrary + Login Page</h4>
+                    <div class="video-container" style="margin: 0;">
+                        <iframe src="https://www.loom.com/embed/44d57228d7504d0f940cec9578ec3ffa" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    <p class="gallery-desc">ใช้ ExcelLibrary ในการดึงข้อมูล Test Data จำนวนมากจากไฟล์ Excel มาใช้ทดสอบระบบ Login ในหลายๆ รูปแบบ (Data-Driven Testing)</p>
+                </div>
             </div>
+
+            <hr class="modal-divider">
+            
+            <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่เกี่ยวข้อง (Tools)</h3>
+            <div class="tools-container">
+                <span class="tool-badge"><i class="fa-solid fa-robot" style="color: #000;"></i> Robot Framework</span>
+                <span class="tool-badge"><i class="fa-brands fa-python" style="color: #3776ab;"></i> Python</span>
+                <span class="tool-badge"><i class="fa-solid fa-file-excel" style="color: #107c41;"></i> ExcelLibrary / RPA</span>
+                <span class="tool-badge"><i class="fa-solid fa-database" style="color: #007acc;"></i> SQL / DatabaseLibrary</span>
+            </div>
+
         </div>
     </div>
     
-    <div id="modal-activity1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-person-chalkboard" style="color: var(--secondary-color);"></i> กิจกรรมอบรมแอปฯ 'เที่ยวชุมชน'</h2><p>ลงพื้นที่จัดกิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน” ให้แก่กลุ่มตัวอย่างผู้ใช้งานใน อ.คีรีมาส จ.สุโขทัย การอบรมเน้นการปฏิบัติจริง พร้อมแลกเปลี่ยนความคิดเห็นเพื่อนำมาปรับปรุงแอปพลิเคชัน</p><hr class="modal-divider"><h3><i class="fa-solid fa-lightbulb"></i> ทักษะและประสบการณ์ที่ได้รับ</h3><ul class="modal-details-list"><li><i class="fa-solid fa-users"></i> ทักษะการสื่อสารและการนำเสนอต่อหน้าชุมชน</li><li><i class="fa-solid fa-comments"></i> การเก็บรวบรวม Feedback จากผู้ใช้งานจริง (User Feedback) เพื่อหาจุดบกพร่อง (UX/UI Issues)</li></ul></div></div>
-    <div id="modal-activity2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-industry" style="color: var(--secondary-color);"></i> ทัศนศึกษา AUTOMATION EXPO 2025</h2><p>ทัศนศึกษาดูงานด้านเทคโนโลยีระบบอัตโนมัติและหุ่นยนต์ ณ ศูนย์ประชุมนานาชาตินงนุชพัทยา และ EEC Automation Park มหาวิทยาลัยบูรพา เพื่อเรียนรู้เทคโนโลยีอุตสาหกรรม 4.0</p><hr class="modal-divider"><h3><i class="fa-solid fa-eye"></i> สิ่งที่ได้เรียนรู้</h3><ul class="modal-details-list"><li><i class="fa-solid fa-network-wired"></i> เทคโนโลยี IIoT (Industrial Internet of Things)</li><li><i class="fa-solid fa-robot"></i> ระบบแขนกลและหุ่นยนต์ในโรงงานอุตสาหกรรม</li></ul></div></div>
+    <div id="modal-activity1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-person-chalkboard" style="color: var(--secondary-color);"></i> กิจกรรมอบรมแอปฯ 'เที่ยวชุมชน'</h2><p>ลงพื้นที่จัดกิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน” ให้แก่กลุ่มตัวอย่างผู้ใช้งานใน อ.คีรีมาส จ.สุโขทัย...</p></div></div>
+    <div id="modal-activity2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-industry" style="color: var(--secondary-color);"></i> ทัศนศึกษา AUTOMATION EXPO 2025</h2><p>ทัศนศึกษาดูงานด้านเทคโนโลยีระบบอัตโนมัติและหุ่นยนต์ ณ ศูนย์ประชุมนานาชาตินงนุชพัทยา...</p></div></div>
     
-    <div id="modal-cert1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> เกียรติบัตรการเข้าร่วม</h2><p>เข้าร่วมกิจกรรม อุ่นใจไซเบอร์ จัดโดย AIS</p><hr class="modal-divider"><h3><i class="fa-solid fa-book-open"></i> หัวข้อหลัก</h3><ul class="modal-details-list"><li><i class="fa-solid fa-check"></i> อุ่นใจไซเบอร์</li></ul></div></div>
-    <div id="modal-cert2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> หลักสูตรความปลอดภัยทางไซเบอร์</h2><p>ผ่านการอบรมหลักสูตร Cybersecurity Essentials ครอบคลุมความรู้พื้นฐานด้านการป้องกันภัยคุกคามทางไซเบอร์</p><hr class="modal-divider"><h3><i class="fa-solid fa-book-open"></i> หัวข้อหลัก</h3><ul class="modal-details-list"><li><i class="fa-solid fa-shield-halved"></i> Threats, Vulnerabilities, and Attacks</li><li><i class="fa-solid fa-network-wired"></i> Network Security</li><li><i class="fa-solid fa-key"></i> Cryptography Basics</li></ul></div></div>
-    <div id="modal-cert3" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> ความฉลาดรู้ทางดิจิทัล</h2><p>ผ่านการทดสอบความเข้าใจและการใช้เทคโนโลยีดิจิทัลในชีวิตประจำวัน</p></div></div>
-    <div id="modal-cert4" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> การแข่งขัน Hackathon #2</h2><p>เข้าร่วมการแข่งขันพัฒนาซอฟต์แวร์</p></div></div>
-    <div id="modal-cert5" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> ความรู้เบื้องต้นเกี่ยวกับ IoT</h2><p>ผ่านการอบรมหลักสูตร Introduction to Internet of Things ครอบคลุมพื้นฐานการทำงานของอุปกรณ์และเครือข่าย IoT</p></div></div>
-    <div id="modal-cert6" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> การพัฒนาทักษะ Docker</h2><p>เรียนรู้พื้นฐานการใช้งาน Docker สำหรับการสร้างและจัดการ Container</p></div></div>
-    <div id="modal-cert7" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> PCAP: การเขียนโปรแกรมด้วย Python</h2><p>ผ่านการอบรมหลักสูตรการเขียนโปรแกรมภาษา Python ขั้นพื้นฐานถึงระดับกลางจาก Cisco Networking Academy</p></div></div>
-    <div id="modal-cert8" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> การประเมินความฉลาดรู้ทางดิจิทัล</h2><p>ผ่านการประเมินความสามารถด้าน Digital Literacy ตามมาตรฐาน</p></div></div>
-    <div id="modal-cert9" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> พื้นฐานความปลอดภัยทางไซเบอร์</h2><p>เรียนรู้แนวคิดหลักด้านความปลอดภัยบนโลกไซเบอร์ผ่านแพลตฟอร์ม MOOC</p></div></div>
-    <div id="modal-cert10" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> ทักษะการทดสอบซอฟต์แวร์</h2><p>เรียนรู้กระบวนการและเทคนิคต่างๆ ในการทดสอบซอฟต์แวร์เพื่อประกันคุณภาพ</p></div></div>
-    <div id="modal-cert11" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> Fortinet Network Security Expert</h2><p>ผ่านการรับรองความสามารถด้านความปลอดภัยเครือข่ายจาก Fortinet ในระดับ NSE 1 & 2</p></div></div>
+    <div id="modal-cert1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award"></i> เกียรติบัตรการเข้าร่วม</h2><p>อุ่นใจไซเบอร์ จัดโดย AIS</p></div></div>
+    <div id="modal-cert2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award"></i> หลักสูตรความปลอดภัยทางไซเบอร์</h2></div></div>
+    <div id="modal-cert3" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award"></i> ความฉลาดรู้ทางดิจิทัล</h2></div></div>
+    <div id="modal-cert4" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award"></i> การแข่งขัน Hackathon #2</h2></div></div>
+    <div id="modal-cert5" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award"></i> ความรู้เบื้องต้นเกี่ยวกับ IoT</h2></div></div>
+    <div id="modal-cert6" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award"></i> การพัฒนาทักษะ Docker</h2></div></div>
 
     <footer>
         <div class="footer-content" data-aos="fade-up">
             <div class="footer-logo">
                 <h3>พีรวิชญ์ กันทะกะ</h3>
                 <p>Software Tester & QA Portfolio</p>
-                <div class="tester-badge">
-                    <i class="fa-solid fa-check-double"></i> Status: All Tests Passed
-                </div>
             </div>
             <div class="footer-contact">
                 <h4>ช่องทางการติดต่อ</h4>
                 <div class="footer-social">
-                    <a href="mailto:wkanthaka@gmail.com?subject=สนใจติดต่องานตำแหน่ง%20Software%20Tester/QA" class="social-btn" title="ส่งอีเมลหาฉัน"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="mailto:wkanthaka@gmail.com" class="social-btn"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </div>
