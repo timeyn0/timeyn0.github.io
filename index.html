@@ -101,7 +101,6 @@
         .details-button.primary { background-color: var(--secondary-color); color: white; }
         .details-button.primary:hover { background-color: var(--secondary-dark); box-shadow: 0 7px 14px rgba(37, 99, 235, 0.4); }
 
-        /* Skill Tags */
         .skill-tag {
             background: #ffffff; color: #334155; padding: 10px 20px; border-radius: 30px; 
             font-weight: 600; font-size: 1rem; display: inline-flex; align-items: center; gap: 10px;
@@ -111,9 +110,6 @@
         .skill-tag i { transition: color 0.3s ease; }
         .skill-tag:hover i { color: white !important; }
 
-        /* =========================================================
-           MODAL REDESIGN (สไตล์หน้าต่างรายละเอียดแบบมืออาชีพ)
-           ========================================================= */
         .modal {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); 
@@ -143,15 +139,12 @@
         .modal-content h3 { margin-top: 1.5rem; color: var(--secondary-color); font-size: 1.15rem; font-weight: 700; display: flex; align-items: center; gap: 8px;}
         .modal-content p { color: #475569; line-height: 1.7; margin-bottom: 0;}
         
-        /* เส้นคั่นใน Modal */
         .modal-divider { border: 0; height: 1px; background: #e2e8f0; margin: 1.5rem 0; }
         
-        /* รายการที่มีไอคอน (Bullet Points ใหม่) */
         .modal-details-list { list-style: none; padding: 0; margin-top: 1rem; margin-bottom: 0; }
         .modal-details-list li { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 0.8rem; color: #475569; line-height: 1.6; }
         .modal-details-list li i { color: var(--secondary-color); margin-top: 5px; font-size: 1.1rem; flex-shrink: 0; }
         
-        /* ป้าย Tag เครื่องมือใน Modal */
         .tools-container { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 1rem; }
         .tool-badge {
             background: #f8fafc; color: #334155; padding: 6px 14px; border-radius: 8px;
@@ -160,6 +153,15 @@
         }
         .tool-badge:hover { background: #e2e8f0; border-color: #cbd5e1; }
         .tool-badge i { font-size: 1.1rem; }
+
+        .video-container {
+            position: relative; padding-bottom: 56.25%; height: 0;
+            overflow: hidden; border-radius: 12px; margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); background: #f1f5f9;
+        }
+        .video-container iframe {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;
+        }
 
         /* FOOTER */
         footer { background: #0f172a; border-top: 4px solid var(--secondary-color); color: #94a3b8; padding: 4rem 0 2rem; position: relative; font-family: 'Sarabun', sans-serif;}
@@ -242,7 +244,7 @@
         </section>
 
         <section id="activities" class="section">
-            <div class="container">
+             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">กิจกรรม</h2>
                 <div class="portfolio-grid">
                      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
@@ -300,6 +302,10 @@
                 <li><i class="fa-solid fa-robot"></i> จัดทำสคริปต์ Automated Testing เพื่อลดเวลาการทดสอบซ้ำ</li>
             </ul>
 
+            <div class="video-container">
+                <iframe src="https://www.loom.com/embed/b208f4b0a9854201a29bcb7a340aebd9" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+
             <hr class="modal-divider">
 
             <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่ใช้ (Tools)</h3>
@@ -318,17 +324,13 @@
             <button class="modal-close" onclick="closeModal(this)">&times;</button>
             <h2><i class="fa-solid fa-bus" style="color: var(--secondary-color);"></i> ทดสอบแอปฯ PSRU Bus (Prompt Go)</h2>
             <p>ออกแบบและพัฒนาสคริปต์สำหรับทดสอบแอปพลิเคชัน PSRU Bus แบบอัตโนมัติ เพื่อตรวจสอบความถูกต้องของการแสดงตำแหน่งรถไฟฟ้าแบบเรียลไทม์ และทดสอบประสิทธิภาพของระบบ</p>
-            
             <hr class="modal-divider">
-            
             <h3><i class="fa-solid fa-list-check"></i> รายละเอียดการทำงาน</h3>
             <ul class="modal-details-list">
                 <li><i class="fa-solid fa-location-dot"></i> ทดสอบความแม่นยำของการติดตามและแสดงตำแหน่งรถแบบ Real-time</li>
                 <li><i class="fa-solid fa-robot"></i> พัฒนาสคริปต์ Automation เพื่อจำลองการใช้งานในสถานการณ์ต่างๆ</li>
             </ul>
-
             <hr class="modal-divider">
-
             <h3><i class="fa-solid fa-toolbox"></i> เครื่องมือที่ใช้ (Tools)</h3>
             <div class="tools-container">
                 <span class="tool-badge"><i class="fa-solid fa-mobile-screen-button" style="color: #334155;"></i> Appium</span>
@@ -340,38 +342,9 @@
         </div>
     </div>
     
-    <div id="modal-activity1" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal(this)">&times;</button>
-            <h2><i class="fa-solid fa-person-chalkboard" style="color: var(--secondary-color);"></i> กิจกรรมอบรมแอปฯ 'เที่ยวชุมชน'</h2>
-            <p>ลงพื้นที่จัดกิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน” ให้แก่กลุ่มตัวอย่างผู้ใช้งานใน อ.คีรีมาส จ.สุโขทัย การอบรมเน้นการปฏิบัติจริง พร้อมแลกเปลี่ยนความคิดเห็นเพื่อนำมาปรับปรุงแอปพลิเคชัน</p>
-            
-            <hr class="modal-divider">
-
-            <h3><i class="fa-solid fa-lightbulb"></i> ทักษะและประสบการณ์ที่ได้รับ</h3>
-            <ul class="modal-details-list">
-                <li><i class="fa-solid fa-users"></i> ทักษะการสื่อสารและการนำเสนอต่อหน้าชุมชน</li>
-                <li><i class="fa-solid fa-comments"></i> การเก็บรวบรวม Feedback จากผู้ใช้งานจริง (User Feedback) เพื่อหาจุดบกพร่อง (UX/UI Issues)</li>
-            </ul>
-        </div>
-    </div>
+    <div id="modal-activity1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-person-chalkboard" style="color: var(--secondary-color);"></i> กิจกรรมอบรมแอปฯ 'เที่ยวชุมชน'</h2><p>ลงพื้นที่จัดกิจกรรม “อบรมถ่ายทอดความรู้การใช้งานแอปพลิเคชันท่องเที่ยวชุมชน” ให้แก่กลุ่มตัวอย่างผู้ใช้งานใน อ.คีรีมาส จ.สุโขทัย การอบรมเน้นการปฏิบัติจริง พร้อมแลกเปลี่ยนความคิดเห็นเพื่อนำมาปรับปรุงแอปพลิเคชัน</p><hr class="modal-divider"><h3><i class="fa-solid fa-lightbulb"></i> ทักษะและประสบการณ์ที่ได้รับ</h3><ul class="modal-details-list"><li><i class="fa-solid fa-users"></i> ทักษะการสื่อสารและการนำเสนอต่อหน้าชุมชน</li><li><i class="fa-solid fa-comments"></i> การเก็บรวบรวม Feedback จากผู้ใช้งานจริง (User Feedback) เพื่อหาจุดบกพร่อง (UX/UI Issues)</li></ul></div></div>
+    <div id="modal-activity2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-industry" style="color: var(--secondary-color);"></i> ทัศนศึกษา AUTOMATION EXPO 2025</h2><p>ทัศนศึกษาดูงานด้านเทคโนโลยีระบบอัตโนมัติและหุ่นยนต์ ณ ศูนย์ประชุมนานาชาตินงนุชพัทยา และ EEC Automation Park มหาวิทยาลัยบูรพา เพื่อเรียนรู้เทคโนโลยีอุตสาหกรรม 4.0</p><hr class="modal-divider"><h3><i class="fa-solid fa-eye"></i> สิ่งที่ได้เรียนรู้</h3><ul class="modal-details-list"><li><i class="fa-solid fa-network-wired"></i> เทคโนโลยี IIoT (Industrial Internet of Things)</li><li><i class="fa-solid fa-robot"></i> ระบบแขนกลและหุ่นยนต์ในโรงงานอุตสาหกรรม</li></ul></div></div>
     
-    <div id="modal-activity2" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal(this)">&times;</button>
-            <h2><i class="fa-solid fa-industry" style="color: var(--secondary-color);"></i> ทัศนศึกษา AUTOMATION EXPO 2025</h2>
-            <p>ทัศนศึกษาดูงานด้านเทคโนโลยีระบบอัตโนมัติและหุ่นยนต์ ณ ศูนย์ประชุมนานาชาตินงนุชพัทยา และ EEC Automation Park มหาวิทยาลัยบูรพา เพื่อเรียนรู้เทคโนโลยีอุตสาหกรรม 4.0</p>
-            
-            <hr class="modal-divider">
-
-            <h3><i class="fa-solid fa-eye"></i> สิ่งที่ได้เรียนรู้</h3>
-            <ul class="modal-details-list">
-                <li><i class="fa-solid fa-network-wired"></i> เทคโนโลยี IIoT (Industrial Internet of Things)</li>
-                <li><i class="fa-solid fa-robot"></i> ระบบแขนกลและหุ่นยนต์ในโรงงานอุตสาหกรรม</li>
-            </ul>
-        </div>
-    </div>
-
     <div id="modal-cert1" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> เกียรติบัตรการเข้าร่วม</h2><p>เข้าร่วมกิจกรรม อุ่นใจไซเบอร์ จัดโดย AIS</p><hr class="modal-divider"><h3><i class="fa-solid fa-book-open"></i> หัวข้อหลัก</h3><ul class="modal-details-list"><li><i class="fa-solid fa-check"></i> อุ่นใจไซเบอร์</li></ul></div></div>
     <div id="modal-cert2" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> หลักสูตรความปลอดภัยทางไซเบอร์</h2><p>ผ่านการอบรมหลักสูตร Cybersecurity Essentials ครอบคลุมความรู้พื้นฐานด้านการป้องกันภัยคุกคามทางไซเบอร์</p><hr class="modal-divider"><h3><i class="fa-solid fa-book-open"></i> หัวข้อหลัก</h3><ul class="modal-details-list"><li><i class="fa-solid fa-shield-halved"></i> Threats, Vulnerabilities, and Attacks</li><li><i class="fa-solid fa-network-wired"></i> Network Security</li><li><i class="fa-solid fa-key"></i> Cryptography Basics</li></ul></div></div>
     <div id="modal-cert3" class="modal"><div class="modal-content"><button class="modal-close" onclick="closeModal(this)">&times;</button><h2><i class="fa-solid fa-award" style="color: #f59e0b;"></i> ความฉลาดรู้ทางดิจิทัล</h2><p>ผ่านการทดสอบความเข้าใจและการใช้เทคโนโลยีดิจิทัลในชีวิตประจำวัน</p></div></div>
@@ -397,8 +370,6 @@
                 <h4>ช่องทางการติดต่อ</h4>
                 <div class="footer-social">
                     <a href="mailto:wkanthaka@gmail.com?subject=สนใจติดต่องานตำแหน่ง%20Software%20Tester/QA" class="social-btn" title="ส่งอีเมลหาฉัน"><i class="fa-solid fa-envelope"></i></a>
-                    <a href="#" class="social-btn" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="social-btn" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                 </div>
             </div>
         </div>
